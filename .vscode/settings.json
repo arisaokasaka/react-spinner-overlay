@@ -1,0 +1,7 @@
+{
+  "editor.formatOnSave": true,
+  "eslint.format.enable": true,
+  "extensions.ignoreRecommendations": false,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "files.insertFinalNewline": true
+}
