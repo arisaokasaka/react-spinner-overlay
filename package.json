@@ -22,7 +22,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "dev:demo": "webpack-dev-server --mode development",
-    "build:demo": "webpack --mode production",
+    "build:demo": "rm -rf examples/dist && webpack --mode production",
     "publish:demo": "yarn build:demo && gh-pages -d examples/dist"
   },
   "eslintConfig": {
