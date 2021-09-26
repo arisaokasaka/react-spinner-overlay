@@ -1,11 +1,19 @@
 import React from "react";
 
-type Props = { loading?: boolean; size?: number; color?: string };
+type Props = {
+  loading?: boolean;
+  size?: number;
+  color?: string;
+  innerBorderWidth?: number;
+  outerBorderWidth?: number;
+};
 
 export const CircleSpinner: React.FC<Props> = ({
   loading = true,
   size = 60,
   color = "#00ced1",
+  innerBorderWidth = 8,
+  outerBorderWidth = 1,
 }) => {
   return (
     <>
@@ -28,7 +36,7 @@ export const CircleSpinner: React.FC<Props> = ({
               width: `${size}px`,
               color: `${color}`,
               borderRadius: "50%",
-              border: `8px solid ${color}`,
+              border: `${innerBorderWidth}px solid ${color}`,
               borderColor: "transparent",
               borderTopColor: `${color}`,
               boxSizing: "border-box",
@@ -42,7 +50,7 @@ export const CircleSpinner: React.FC<Props> = ({
               width: `${size}px`,
               height: `${size}px`,
               borderRadius: "50%",
-              border: `1px solid ${color}`,
+              border: `${outerBorderWidth}px solid ${color}`,
               boxSizing: "border-box",
             }}
           ></div>

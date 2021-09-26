@@ -6,7 +6,7 @@ type Props = { loading: boolean; overlayColor?: string; zIndex?: number };
 export const Overlay: React.FC<Props> = ({
   children,
   loading,
-  overlayColor = "rgb(80 214 215 / 42%)",
+  overlayColor = "rgb(212 228 228 / 56%)",
   zIndex = 500,
 }) => {
   const OverlayBody: React.FC = ({ children }) =>
