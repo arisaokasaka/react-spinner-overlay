@@ -7,6 +7,26 @@ import "./index.css";
 function App() {
   const [showOverlay, setShowOverlay] = useState<boolean>(false);
 
+  function SpinnerContainer(Spinner: JSX.Element, title: string): JSX.Element {
+    return (
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          flexDirection: "column",
+          alignItems: "center",
+          width: "180px",
+          border: "1px solid rgb(212 228 228)",
+          padding: "24px 16px",
+          margin: "16px",
+        }}
+      >
+        {Spinner}
+        <code style={{ marginTop: "16px", fontSize: "12px" }}>{title}</code>
+      </div>
+    );
+  }
+
   return (
     <div>
       <header
@@ -36,6 +56,32 @@ function App() {
           zIndex: -100,
         }}
       >
+        <p style={{ marginTop: "48px", fontSize: "20px" }}>
+          Of course, You can customize{" "}
+          <span style={{ color: "#00ced1", fontWeight: "bolder" }}>size</span>{" "}
+          and{" "}
+          <span style={{ color: "#00ced1", fontWeight: "bolder" }}>color</span>!
+        </p>
+        <code
+          style={{
+            marginTop: "24px",
+            padding: "8px 16px",
+            backgroundColor: "rgb(212 228 228)",
+            fontSize: "14px",
+          }}
+        >
+          $ yarn add -D react-spinner-overlay
+        </code>
+        <code
+          style={{
+            marginTop: "6px",
+            padding: "8px 16px",
+            backgroundColor: "rgb(212 228 228)",
+            fontSize: "14px",
+          }}
+        >
+          $ npm install --save-dev react-spinner-overlay
+        </code>
         <button
           style={{
             border: "none",
@@ -43,6 +89,7 @@ function App() {
             color: "#fff",
             fontWeight: "bolder",
             padding: "12px",
+            marginTop: "52px",
             fontSize: "16px",
             cursor: "pointer",
           }}
@@ -53,14 +100,28 @@ function App() {
         >
           Show Overlay
         </button>
-        <CircleSpinner loading={true} />
-        <Overlay loading={showOverlay}>
-          <>
-            <CircleSpinner />
-            <p>Wait two seconds.</p>
-          </>
-        </Overlay>
+
+        <div
+          style={{
+            display: "flex",
+            flexWrap: "wrap",
+            justifyContent: "center",
+            marginTop: "40px",
+          }}
+        >
+          {SpinnerContainer(<CircleSpinner />, "<CircleSpinner />")}
+          {SpinnerContainer(<CircleSpinner />, "<CircleSpinner />")}
+          {SpinnerContainer(<CircleSpinner />, "<CircleSpinner />")}
+          {SpinnerContainer(<CircleSpinner />, "<CircleSpinner />")}
+          {SpinnerContainer(<CircleSpinner />, "<CircleSpinner />")}
+        </div>
       </div>
+      <Overlay loading={showOverlay}>
+        <>
+          <CircleSpinner />
+          <p>Wait two seconds.</p>
+        </>
+      </Overlay>
     </div>
   );
 }
