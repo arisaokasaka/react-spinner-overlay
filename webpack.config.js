@@ -1,5 +1,4 @@
 const path = require("path");
-const webpack = require("webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const ForkTsCheckerWebpackPlugin = require("fork-ts-checker-webpack-plugin");
 
@@ -20,6 +19,10 @@ module.exports = {
       },
     ]
   },
+  output: {
+      path: path.join(__dirname, "examples/dist"),
+      filename: "bundle.js"
+  },
   resolve: {
     extensions: ["*", ".js", ".jsx", ".ts", ".tsx"]
   },
@@ -37,5 +40,5 @@ module.exports = {
   ],
   devServer: {
     port: 3010
-  }
+  },
 };

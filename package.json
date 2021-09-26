@@ -18,11 +18,12 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "rm -rf dist && babel --extensions '.tsx' src --out-dir dist --copy-files",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "dev:demo": "webpack-dev-server --mode development",
-    "build:demo": "webpack --mode production"
+    "build:demo": "webpack --mode production",
+    "publish:demo": "yarn build:demo && gh-pages -d examples/dist"
   },
   "eslintConfig": {
     "extends": [
@@ -49,9 +50,11 @@
     "@babel/plugin-transform-typescript": "^7.15.4",
     "@babel/preset-env": "^7.15.6",
     "@babel/preset-react": "^7.14.5",
+    "@babel/preset-typescript": "^7.15.0",
     "babel-loader": "8.1.0",
     "css-loader": "^6.3.0",
     "fork-ts-checker-webpack-plugin": "^6.3.3",
+    "gh-pages": "^3.2.3",
     "html-webpack-plugin": "^5.3.2",
     "style-loader": "^3.3.0",
     "ts-loader": "^9.2.6",
