@@ -1,9 +1,9 @@
 import React from "react";
 
-type Props = { loading: boolean; size?: number; color?: string };
+type Props = { loading?: boolean; size?: number; color?: string };
 
 export const CircleSpinner: React.FC<Props> = ({
-  loading,
+  loading = true,
   size = 60,
   color = "#00ced1",
 }) => {
