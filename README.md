@@ -11,9 +11,9 @@ In the project directory, you can run:
 Runs the demo page in the development mode.\
 Open [http://localhost:3010](http://localhost:3010) to view it in the browser.
 
-### `yarn build:demo`
+### `yarn publish:demo`
 
-Runs the demo page in the production mode.\
+Deploys the demo page in the production mode.\
 Open [https://arisaokasaka.github.io/react-spinner-overlay/](https://arisaokasaka.github.io/react-spinner-overlay/) to view it in the browser.
 
 ### `yarn start`
