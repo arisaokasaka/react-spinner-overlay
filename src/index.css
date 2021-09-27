@@ -13,7 +13,7 @@ code {
 }
 
 .rotate-infinite {
-  animation: rotate-infinite infinite 1500ms linear;
+  animation: rotate-infinite infinite 1200ms linear;
 }
 
 @keyframes rotate-infinite {
