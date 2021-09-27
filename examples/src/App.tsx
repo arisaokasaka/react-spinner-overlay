@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { CircleSpinner } from "../../src/components/CircleSpinner";
+import { CircleSpinner2 } from "../../src/components/CircleSpinner2";
 import { Overlay } from "../../src/components/Overlay";
+import { SimpleSpinner } from "../../src/components/SimpleSpinner";
 import "../../src/index.css";
 import "./index.css";
 
@@ -110,10 +112,8 @@ function App() {
           }}
         >
           {SpinnerContainer(<CircleSpinner />, "<CircleSpinner />")}
-          {SpinnerContainer(<CircleSpinner />, "<CircleSpinner />")}
-          {SpinnerContainer(<CircleSpinner />, "<CircleSpinner />")}
-          {SpinnerContainer(<CircleSpinner />, "<CircleSpinner />")}
-          {SpinnerContainer(<CircleSpinner />, "<CircleSpinner />")}
+          {SpinnerContainer(<CircleSpinner2 />, "<CircleSpinner2 />")}
+          {SpinnerContainer(<SimpleSpinner />, "<SimpleSpinner />")}
         </div>
       </div>
       <Overlay loading={showOverlay}>
