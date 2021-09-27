@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import { CircleSpinner } from "../../src/components/CircleSpinner";
 import { CircleSpinner2 } from "../../src/components/CircleSpinner2";
+import { LineBounceLoader } from "../../src/components/LineBounceLoader";
 import { Overlay } from "../../src/components/Overlay";
+import { SimpleLineLoader } from "../../src/components/SimpleLineLoader";
 import { SimpleSpinner } from "../../src/components/SimpleSpinner";
 import "../../src/index.css";
 import "./index.css";
@@ -18,6 +20,7 @@ function App() {
           flexDirection: "column",
           alignItems: "center",
           width: "180px",
+          minHeight: "112px",
           border: "1px solid rgb(212 228 228)",
           padding: "24px 16px",
           margin: "16px",
@@ -55,6 +58,7 @@ function App() {
           flexDirection: "column",
           marginTop: "24px",
           marginBottom: "24px",
+          padding: "16px",
           zIndex: -100,
         }}
       >
@@ -109,11 +113,14 @@ function App() {
             flexWrap: "wrap",
             justifyContent: "center",
             marginTop: "40px",
+            maxWidth: "1200px",
           }}
         >
           {SpinnerContainer(<CircleSpinner />, "<CircleSpinner />")}
           {SpinnerContainer(<CircleSpinner2 />, "<CircleSpinner2 />")}
           {SpinnerContainer(<SimpleSpinner />, "<SimpleSpinner />")}
+          {SpinnerContainer(<LineBounceLoader />, "<LineBounceLoader />")}
+          {SpinnerContainer(<SimpleLineLoader />, "<SimpleLineLoader />")}
         </div>
       </div>
       <Overlay loading={showOverlay}>
