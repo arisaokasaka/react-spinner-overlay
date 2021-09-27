@@ -25,3 +25,18 @@ code {
     transform: rotate(360deg);
   }
 }
+
+
+.swing-horizontally {
+  animation: swing-horizontally infinite 900ms ease;
+}
+
+@keyframes swing-horizontally {
+  0% {
+    transform: translateX(-100%);
+  }
+
+  100% {
+    transform: translateX(100%);
+  }
+}
