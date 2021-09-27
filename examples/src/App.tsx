@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { CircleSpinner } from "../../src/components/CircleSpinner";
 import { CircleSpinner2 } from "../../src/components/CircleSpinner2";
+import { RouletteSpinner } from "../../src/components/RouletteSpinner";
 import { LineBounceLoader } from "../../src/components/LineBounceLoader";
 import { Overlay } from "../../src/components/Overlay";
 import { SimpleLineLoader } from "../../src/components/SimpleLineLoader";
@@ -121,6 +122,7 @@ function App() {
           {SpinnerContainer(<SimpleSpinner />, "<SimpleSpinner />")}
           {SpinnerContainer(<LineBounceLoader />, "<LineBounceLoader />")}
           {SpinnerContainer(<SimpleLineLoader />, "<SimpleLineLoader />")}
+          {SpinnerContainer(<RouletteSpinner />, "<RouletteSpinner />")}
         </div>
       </div>
       <Overlay loading={showOverlay}>

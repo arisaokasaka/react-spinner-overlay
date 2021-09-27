@@ -40,3 +40,47 @@ code {
     transform: translateX(100%);
   }
 }
+
+
+.fading-four-count-1 {
+  animation: fading-four-count infinite 1000ms linear;
+}
+.fading-four-count-2 {
+  animation: fading-four-count infinite 1000ms linear 250ms;
+}
+.fading-four-count-3 {
+  animation: fading-four-count infinite 1000ms linear 500ms;
+}
+.fading-four-count-4 {
+  animation: fading-four-count infinite 1000ms linear 750ms;
+}
+
+@keyframes fading-four-count {
+  0% {
+    opacity: 0.3;
+  }
+
+  12.5% {
+    opacity: 0.4;
+  }
+
+  25% {
+    opacity: 0.5;
+  }
+
+  37.5% {
+    opacity: 0.6;
+  }
+
+  50% {
+    opacity: 0.7;
+  }
+
+  62.5% {
+    opacity: 0.8;
+  }
+
+  75% {
+    opacity: 1;
+  }
+}
