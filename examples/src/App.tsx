@@ -41,16 +41,30 @@ function App() {
           top: "0",
           left: "0",
           right: "0",
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
           color: "#fff",
           fontSize: "20px",
-          padding: "12px 0 12px 24px",
+          padding: "12px 24px",
           letterSpacing: "0.5px",
           fontWeight: "bolder",
           background:
             "linear-gradient(90deg, rgba(63,205,152,1) 0%, rgba(46,197,199,1) 73%)",
         }}
       >
-        React Spinner Overlay
+        <span>React Spinner Overlay</span>
+        <a
+          style={{
+            fontSize: "14px",
+            color: "#fff",
+            fontWeight: "normal",
+            textDecoration: "none",
+          }}
+          href="https://github.com/arisaokasaka/react-spinner-overlay"
+        >
+          GitHub
+        </a>
       </header>
       <div
         style={{
