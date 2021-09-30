@@ -8,6 +8,7 @@ import { SimpleLineLoader } from "../../src/components/SimpleLineLoader";
 import { SimpleSpinner } from "../../src/components/SimpleSpinner";
 import "../../src/index.css";
 import "./index.css";
+import { DotCircleSpinner } from "../../src/components/DotCircleSpinner";
 
 function App() {
   const [showOverlay, setShowOverlay] = useState<boolean>(false);
@@ -137,6 +138,7 @@ function App() {
           {SpinnerContainer(<LineBounceLoader />, "<LineBounceLoader />")}
           {SpinnerContainer(<SimpleLineLoader />, "<SimpleLineLoader />")}
           {SpinnerContainer(<RouletteSpinner />, "<RouletteSpinner />")}
+          {SpinnerContainer(<DotCircleSpinner />, "<DotCircleSpinner />")}
         </div>
       </div>
       <Overlay loading={showOverlay}>
