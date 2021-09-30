@@ -16,6 +16,10 @@ code {
   animation: rotate-infinite infinite 1200ms linear;
 }
 
+.rotate-infinite-slow {
+  animation: rotate-infinite infinite 2s linear;
+}
+
 @keyframes rotate-infinite {
   0% {
     transform: rotate(0deg);
