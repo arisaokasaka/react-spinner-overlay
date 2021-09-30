@@ -9,6 +9,7 @@ import { SimpleSpinner } from "../../src/components/SimpleSpinner";
 import "../../src/index.css";
 import "./index.css";
 import { DotCircleSpinner } from "../../src/components/DotCircleSpinner";
+import { FerrisWheelSpinner } from "../../src/components/FerrisWheelSpinner";
 
 function App() {
   const [showOverlay, setShowOverlay] = useState<boolean>(false);
@@ -139,6 +140,7 @@ function App() {
           {SpinnerContainer(<SimpleLineLoader />, "<SimpleLineLoader />")}
           {SpinnerContainer(<RouletteSpinner />, "<RouletteSpinner />")}
           {SpinnerContainer(<DotCircleSpinner />, "<DotCircleSpinner />")}
+          {SpinnerContainer(<FerrisWheelSpinner />, "<FerrisWheelSpinner />")}
         </div>
       </div>
       <Overlay loading={showOverlay}>
