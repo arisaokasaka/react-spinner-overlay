@@ -10,35 +10,35 @@ module.exports = {
         test: /\.(t|j)sx?$/,
         loader: "ts-loader",
         options: {
-          transpileOnly: true
-        }
+          transpileOnly: true,
+        },
       },
       {
-          test: /\.css$/,
-          use: ["style-loader", "css-loader"]
+        test: /\.css$/,
+        use: ["style-loader", "css-loader", "postcss-loader"],
       },
-    ]
+    ],
   },
   output: {
-      path: path.join(__dirname, "examples/dist"),
-      filename: "bundle.js"
+    path: path.join(__dirname, "examples/dist"),
+    filename: "bundle.js",
   },
   resolve: {
-    extensions: ["*", ".js", ".jsx", ".ts", ".tsx"]
+    extensions: ["*", ".js", ".jsx", ".ts", ".tsx"],
   },
   plugins: [
     new HtmlWebpackPlugin({
       template: path.join(__dirname, "examples/src/index.html"),
-      filename: './index.html'
+      filename: "./index.html",
     }),
     new ForkTsCheckerWebpackPlugin({
       typescript: true,
       eslint: {
-        files: './src/**/*.{ts,tsx}'
-      }
-    })
+        files: "./src/**/*.{ts,tsx}",
+      },
+    }),
   ],
   devServer: {
-    port: 3010
+    port: 3010,
   },
 };
