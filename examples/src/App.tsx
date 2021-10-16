@@ -10,6 +10,7 @@ import "../../src/index.css";
 import "./index.css";
 import { DotCircleSpinner } from "../../src/components/DotCircleSpinner";
 import { FerrisWheelSpinner } from "../../src/components/FerrisWheelSpinner";
+import { BounceLetterLoader } from "../../src/components/BounceLetterLoader";
 
 function App() {
   const [showOverlay, setShowOverlay] = useState<boolean>(false);
@@ -39,7 +40,7 @@ function App() {
     <div>
       <header
         style={{
-          position: "sticky",
+          position: "fixed",
           top: "0",
           left: "0",
           right: "0",
@@ -53,6 +54,7 @@ function App() {
           fontWeight: "bolder",
           background:
             "linear-gradient(90deg, rgba(63,205,152,1) 0%, rgba(46,197,199,1) 73%)",
+          zIndex: 10,
         }}
       >
         <span>React Spinner Overlay</span>
@@ -73,13 +75,12 @@ function App() {
           display: "flex",
           alignItems: "center",
           flexDirection: "column",
-          marginTop: "24px",
           marginBottom: "24px",
           padding: "16px",
           zIndex: -100,
         }}
       >
-        <p style={{ marginTop: "48px", fontSize: "20px" }}>
+        <p style={{ marginTop: "48px", fontSize: "20px", textAlign: "center" }}>
           Of course, You can customize{" "}
           <span style={{ color: "#00ced1", fontWeight: "bolder" }}>size</span>{" "}
           and{" "}
@@ -141,6 +142,10 @@ function App() {
           {SpinnerContainer(<RouletteSpinner />, "<RouletteSpinner />")}
           {SpinnerContainer(<DotCircleSpinner />, "<DotCircleSpinner />")}
           {SpinnerContainer(<FerrisWheelSpinner />, "<FerrisWheelSpinner />")}
+          {SpinnerContainer(
+            <BounceLetterLoader letters="Loading..." />,
+            "<BounceLetterLoader />"
+          )}
         </div>
       </div>
       <Overlay loading={showOverlay}>
