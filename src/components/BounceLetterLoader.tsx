@@ -11,7 +11,7 @@ type Props = {
 
 export const BounceLetterLoader: React.FC<Props> = ({
   loading = true,
-  letters = "Loading",
+  letters = "Loading...",
   color = "#00ced1",
   animationDelay,
 }) => {

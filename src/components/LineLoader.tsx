@@ -9,11 +9,12 @@ type Props = {
   borderRadius?: number;
 };
 
-export const SimpleLineLoader: React.FC<Props> = ({
+export const LineLoader: React.FC<Props> = ({
   loading = true,
   width = 60,
   height = 4,
   color = "#00ced1",
+  bgOpacity = 0.3,
   borderRadius = 10,
 }) => {
   return (
@@ -21,6 +22,7 @@ export const SimpleLineLoader: React.FC<Props> = ({
       {loading && (
         <div
           style={{
+            position: "relative",
             display: "block",
             width: `${width}px`,
             height: `${height}px`,
@@ -29,8 +31,23 @@ export const SimpleLineLoader: React.FC<Props> = ({
           }}
         >
           <div
+            style={{
+              position: "absolute",
+              top: "0",
+              left: "0",
+              display: "block",
+              width: `${width}px`,
+              height: `${height}px`,
+              backgroundColor: color,
+              opacity: bgOpacity,
+            }}
+          ></div>
+          <div
             className="swing-horizontally"
             style={{
+              position: "absolute",
+              top: "0",
+              left: "0",
               width: `${width}px`,
               height: `${height}px`,
               backgroundColor: color,

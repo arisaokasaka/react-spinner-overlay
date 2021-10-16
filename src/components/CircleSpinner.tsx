@@ -6,6 +6,8 @@ type Props = {
   color?: string;
   innerBorderWidth?: number;
   outerBorderWidth?: number;
+  innerBorderOpacity?: number;
+  outerBorderOpacity?: number;
 };
 
 export const CircleSpinner: React.FC<Props> = ({
@@ -14,6 +16,8 @@ export const CircleSpinner: React.FC<Props> = ({
   color = "#00ced1",
   innerBorderWidth = 8,
   outerBorderWidth = 1,
+  innerBorderOpacity = 1,
+  outerBorderOpacity = 1,
 }) => {
   return (
     <>
@@ -21,7 +25,7 @@ export const CircleSpinner: React.FC<Props> = ({
         <div
           className="rotate-infinite"
           style={{
-            display: "inline-block",
+            display: "block",
             position: "relative",
             height: `${size}px`,
             width: `${size}px`,
@@ -40,6 +44,7 @@ export const CircleSpinner: React.FC<Props> = ({
               borderColor: "transparent",
               borderTopColor: `${color}`,
               boxSizing: "border-box",
+              opacity: innerBorderOpacity,
             }}
           ></div>
           <div
@@ -52,6 +57,7 @@ export const CircleSpinner: React.FC<Props> = ({
               borderRadius: "50%",
               border: `${outerBorderWidth}px solid ${color}`,
               boxSizing: "border-box",
+              opacity: outerBorderOpacity,
             }}
           ></div>
         </div>
