@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { CircleSpinner } from "../../src/components/CircleSpinner";
-import { CircleSpinner2 } from "../../src/components/CircleSpinner2";
 import { RouletteSpinner } from "../../src/components/RouletteSpinner";
 import { LineBounceLoader } from "../../src/components/LineBounceLoader";
 import { Overlay } from "../../src/components/Overlay";
@@ -35,6 +34,31 @@ function App() {
       </div>
     );
   }
+
+  const SectionContainer: React.FC<{ title: string }> = ({
+    title,
+    children,
+  }) => {
+    return (
+      <section
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          padding: "20px 12px",
+          margin: "16px",
+          textAlign: "center",
+          border: "1px solid rgb(212 228 228)",
+          width: "280px",
+          minWidth: "280px",
+          minHeight: "112px",
+        }}
+      >
+        <code style={{ fontSize: "14px", marginBottom: "24px" }}>{title}</code>
+        {children}
+      </section>
+    );
+  };
 
   return (
     <div>
@@ -134,9 +158,63 @@ function App() {
             maxWidth: "1200px",
           }}
         >
-          {SpinnerContainer(<CircleSpinner />, "<CircleSpinner />")}
-          {SpinnerContainer(<CircleSpinner2 />, "<CircleSpinner2 />")}
-          {SpinnerContainer(<SimpleSpinner />, "<SimpleSpinner />")}
+          <SectionContainer title={"<CircleSpinner />"}>
+            <div
+              style={{
+                display: "grid",
+                gridTemplateColumns: "1fr 1fr",
+              }}
+            >
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "center",
+                }}
+              >
+                <CircleSpinner />
+                <p style={{ margin: "16px 0 8px 0", fontSize: "12px" }}>
+                  default
+                </p>
+              </div>
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "center",
+                }}
+              >
+                <CircleSpinner outerBorderOpacity={0.3} outerBorderWidth={8} />
+                <code style={{ fontSize: "12px", marginTop: "16px" }}>
+                  outerBorderOpacity={0.3}
+                  <br />
+                  outerBorderWidth={8}
+                </code>
+              </div>
+            </div>
+          </SectionContainer>
+          <SectionContainer title={"<SimpleSpinner />"}>
+            <SimpleSpinner />
+          </SectionContainer>
+          <SectionContainer title={"<LineBounceLoader />"}>
+            <LineBounceLoader />
+          </SectionContainer>
+          <SectionContainer title={"<SimpleLineLoader />"}>
+            <SimpleLineLoader />
+          </SectionContainer>
+          <SectionContainer title={"<RouletteSpinner />"}>
+            <RouletteSpinner />
+          </SectionContainer>
+          <SectionContainer title={"<DotCircleSpinner />"}>
+            <DotCircleSpinner />
+          </SectionContainer>
+          <SectionContainer title={"<FerrisWheelSpinner />"}>
+            <FerrisWheelSpinner />
+          </SectionContainer>
+          <SectionContainer title={"<BounceLetterLoader />"}>
+            <BounceLetterLoader />
+          </SectionContainer>
+          {/* {SpinnerContainer(<SimpleSpinner />, "<SimpleSpinner />")}
           {SpinnerContainer(<LineBounceLoader />, "<LineBounceLoader />")}
           {SpinnerContainer(<SimpleLineLoader />, "<SimpleLineLoader />")}
           {SpinnerContainer(<RouletteSpinner />, "<RouletteSpinner />")}
@@ -145,7 +223,7 @@ function App() {
           {SpinnerContainer(
             <BounceLetterLoader letters="Loading..." />,
             "<BounceLetterLoader />"
-          )}
+          )} */}
         </div>
       </div>
       <Overlay loading={showOverlay}>
