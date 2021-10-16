@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 import { CircleSpinner } from "../../src/components/CircleSpinner";
 import { RouletteSpinner } from "../../src/components/RouletteSpinner";
-import { LineBounceLoader } from "../../src/components/LineBounceLoader";
 import { Overlay } from "../../src/components/Overlay";
-import { SimpleLineLoader } from "../../src/components/SimpleLineLoader";
+import { LineLoader } from "../../src/components/LineLoader";
 import { SimpleSpinner } from "../../src/components/SimpleSpinner";
 import "../../src/index.css";
 import "./index.css";
@@ -13,27 +12,6 @@ import { BounceLetterLoader } from "../../src/components/BounceLetterLoader";
 
 function App() {
   const [showOverlay, setShowOverlay] = useState<boolean>(false);
-
-  function SpinnerContainer(Spinner: JSX.Element, title: string): JSX.Element {
-    return (
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          flexDirection: "column",
-          alignItems: "center",
-          width: "180px",
-          minHeight: "112px",
-          border: "1px solid rgb(212 228 228)",
-          padding: "24px 16px",
-          margin: "16px",
-        }}
-      >
-        {Spinner}
-        <code style={{ marginTop: "16px", fontSize: "12px" }}>{title}</code>
-      </div>
-    );
-  }
 
   const SectionContainer: React.FC<{ title: string }> = ({
     title,
@@ -173,9 +151,7 @@ function App() {
                 }}
               >
                 <CircleSpinner />
-                <p style={{ margin: "16px 0 8px 0", fontSize: "12px" }}>
-                  default
-                </p>
+                <p style={{ marginTop: "16px", fontSize: "12px" }}>default</p>
               </div>
               <div
                 style={{
@@ -185,22 +161,64 @@ function App() {
                 }}
               >
                 <CircleSpinner outerBorderOpacity={0.3} outerBorderWidth={8} />
-                <code style={{ fontSize: "12px", marginTop: "16px" }}>
+                <p style={{ marginTop: "16px", fontSize: "12px" }}>
                   outerBorderOpacity={0.3}
                   <br />
                   outerBorderWidth={8}
-                </code>
+                </p>
+              </div>
+            </div>
+          </SectionContainer>
+          <SectionContainer title={"<LineLoader />"}>
+            <div
+              style={{
+                display: "grid",
+                gridTemplateColumns: "1fr 1fr",
+                columnGap: "28px",
+              }}
+            >
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "center",
+                }}
+              >
+                <div
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    height: "60px",
+                  }}
+                >
+                  <LineLoader />
+                </div>
+                <p style={{ marginTop: "16px", fontSize: "12px" }}>default</p>
+              </div>
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "center",
+                }}
+              >
+                <div
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    height: "60px",
+                  }}
+                >
+                  <LineLoader bgOpacity={0} />
+                </div>
+                <p style={{ marginTop: "16px", fontSize: "12px" }}>
+                  bgOpacity={0}
+                </p>
               </div>
             </div>
           </SectionContainer>
           <SectionContainer title={"<SimpleSpinner />"}>
             <SimpleSpinner />
-          </SectionContainer>
-          <SectionContainer title={"<LineBounceLoader />"}>
-            <LineBounceLoader />
-          </SectionContainer>
-          <SectionContainer title={"<SimpleLineLoader />"}>
-            <SimpleLineLoader />
           </SectionContainer>
           <SectionContainer title={"<RouletteSpinner />"}>
             <RouletteSpinner />
@@ -214,16 +232,6 @@ function App() {
           <SectionContainer title={"<BounceLetterLoader />"}>
             <BounceLetterLoader />
           </SectionContainer>
-          {/* {SpinnerContainer(<SimpleSpinner />, "<SimpleSpinner />")}
-          {SpinnerContainer(<LineBounceLoader />, "<LineBounceLoader />")}
-          {SpinnerContainer(<SimpleLineLoader />, "<SimpleLineLoader />")}
-          {SpinnerContainer(<RouletteSpinner />, "<RouletteSpinner />")}
-          {SpinnerContainer(<DotCircleSpinner />, "<DotCircleSpinner />")}
-          {SpinnerContainer(<FerrisWheelSpinner />, "<FerrisWheelSpinner />")}
-          {SpinnerContainer(
-            <BounceLetterLoader letters="Loading..." />,
-            "<BounceLetterLoader />"
-          )} */}
         </div>
       </div>
       <Overlay loading={showOverlay}>
