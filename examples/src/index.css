@@ -1,3 +1,6 @@
 body {
   margin: 0;
+
+  /* 47px is header height */
+  padding-top: 47px;
 }
