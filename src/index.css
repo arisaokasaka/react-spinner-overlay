@@ -45,11 +45,11 @@ code {
   }
 }
 
-.bounce-vertically {
-  animation: bounce-vertically infinite 2000ms ease;
+.bounce-vertically-40 {
+  animation: bounce-vertically-40 infinite 2000ms ease;
 }
 
-@keyframes bounce-vertically {
+@keyframes bounce-vertically-40 {
   0% {
     transform: translateY(0%);
   }
@@ -63,6 +63,23 @@ code {
   }
 }
 
+.bounce-vertically-90 {
+  animation: bounce-vertically-90 infinite 1200ms ease;
+}
+
+@keyframes bounce-vertically-90 {
+  0% {
+    transform: translateY(0%);
+  }
+
+  10% {
+    transform: translateY(-90%);
+  }
+
+  25% {
+    transform: translateY(0%);
+  }
+}
 
 .fading-four-count-1 {
   animation: fading-four-count infinite 1000ms linear;
