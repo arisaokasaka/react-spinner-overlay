@@ -9,6 +9,7 @@ import "./index.css";
 import { DotCircleSpinner } from "../../src/components/DotCircleSpinner";
 import { FerrisWheelSpinner } from "../../src/components/FerrisWheelSpinner";
 import { BounceLetterLoader } from "../../src/components/BounceLetterLoader";
+import { DotLoader } from "../../src/components/DotLoader";
 
 function App() {
   const [showOverlay, setShowOverlay] = useState<boolean>(false);
@@ -228,6 +229,9 @@ function App() {
           </SectionContainer>
           <SectionContainer title={"<FerrisWheelSpinner />"}>
             <FerrisWheelSpinner />
+          </SectionContainer>
+          <SectionContainer title={"<DotLoader />"}>
+            <DotLoader />
           </SectionContainer>
           <SectionContainer title={"<BounceLetterLoader />"}>
             <BounceLetterLoader />

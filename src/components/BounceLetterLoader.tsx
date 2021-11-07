@@ -28,7 +28,7 @@ export const BounceLetterLoader: React.FC<Props> = ({
         >
           {letterList.map((letter, index) => (
             <span
-              className="bounce-vertically"
+              className="bounce-vertically-40"
               key={`letter-${index}`}
               style={{
                 display: "inline-block",
