@@ -123,3 +123,30 @@ code {
     opacity: 1;
   }
 }
+
+
+.roulette {
+  animation: roulette infinite 900ms;
+}
+
+@keyframes roulette {
+  0% {
+    opacity: 0.3;
+  }
+
+  40% {
+    opacity: 0.3;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  60% {
+    opacity: 0.3;
+  }
+
+  100% {
+    opacity: 0.3;
+  }
+}
