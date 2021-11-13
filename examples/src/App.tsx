@@ -8,8 +8,8 @@ import { LineLoader } from "../../src/components/LineLoader";
 import { SimpleSpinner } from "../../src/components/SimpleSpinner";
 import "../../src/index.css";
 import "./index.css";
-import { DotCircleSpinner } from "../../src/components/DotCircleSpinner";
 import { FerrisWheelSpinner } from "../../src/components/FerrisWheelSpinner";
+import { WindmillSpinner } from "../../src/components/WindmillSpinner";
 import { BounceLetterLoader } from "../../src/components/BounceLetterLoader";
 import { DotLoader } from "../../src/components/DotLoader";
 import { RouletteSpinner } from "../../src/components/RouletteSpinner";
@@ -227,14 +227,14 @@ function App() {
           <SectionContainer title={"<DartsSpinner />"}>
             <DartsSpinner />
           </SectionContainer>
-          <SectionContainer title={"<DotCircleSpinner />"}>
-            <DotCircleSpinner />
+          <SectionContainer title={"<FerrisWheelSpinner />"}>
+            <FerrisWheelSpinner />
           </SectionContainer>
           <SectionContainer title={"<RouletteSpinner />"}>
             <RouletteSpinner />
           </SectionContainer>
-          <SectionContainer title={"<FerrisWheelSpinner />"}>
-            <FerrisWheelSpinner />
+          <SectionContainer title={"<WindmillSpinner />"}>
+            <WindmillSpinner />
           </SectionContainer>
           <SectionContainer title={"<DotLoader />"}>
             <DotLoader />

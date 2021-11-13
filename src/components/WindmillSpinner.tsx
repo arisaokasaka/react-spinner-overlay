@@ -4,12 +4,18 @@ type Props = {
   loading?: boolean;
   size?: number;
   color?: string;
+  borderWidth?: number;
+  borderHeight?: number;
+  borderRadius?: number;
 };
 
-export const DotCircleSpinner: React.FC<Props> = ({
+export const WindmillSpinner: React.FC<Props> = ({
   loading = true,
   size = 40,
   color = "#00ced1",
+  borderWidth = 4,
+  borderHeight = 10,
+  borderRadius = 8,
 }) => {
   const Border: React.FC<{
     rotate: number;
@@ -20,6 +26,8 @@ export const DotCircleSpinner: React.FC<Props> = ({
           position: "absolute",
           top: 0,
           left: 0,
+          display: "flex",
+          justifyContent: "center",
           height: `${size}px`,
           width: `${size}px`,
           transform: `rotate(${rotate}deg)`,
@@ -29,9 +37,9 @@ export const DotCircleSpinner: React.FC<Props> = ({
           style={{
             display: "block",
             backgroundColor: color,
-            width: `20%`,
-            height: `20%`,
-            borderRadius: "100%",
+            width: `${borderWidth}px`,
+            height: `${borderHeight}px`,
+            borderRadius: `${borderRadius}px`,
           }}
         ></span>
       </div>
