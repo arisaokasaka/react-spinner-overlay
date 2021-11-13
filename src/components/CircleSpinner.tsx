@@ -1,6 +1,7 @@
 import React from "react";
+import { Overlay, OverlayProps } from "./common/Overlay";
 
-type Props = {
+type CircleSpinnerProps = {
   loading?: boolean;
   size?: number;
   color?: string;
@@ -10,7 +11,7 @@ type Props = {
   outerBorderOpacity?: number;
 };
 
-export const CircleSpinner: React.FC<Props> = ({
+export const CircleSpinner: React.FC<CircleSpinnerProps> = ({
   loading = true,
   size = 60,
   color = "#00ced1",
@@ -65,3 +66,38 @@ export const CircleSpinner: React.FC<Props> = ({
     </>
   );
 };
+
+export const CircleSpinnerOverlay: React.FC<CircleSpinnerProps & OverlayProps> =
+  ({
+    loading = true,
+    size,
+    color,
+    innerBorderWidth,
+    outerBorderWidth,
+    innerBorderOpacity,
+    outerBorderOpacity,
+    overlayColor,
+    zIndex,
+    message,
+  }) => {
+    return (
+      <>
+        {loading && (
+          <Overlay
+            overlayColor={overlayColor}
+            zIndex={zIndex}
+            message={message}
+          >
+            <CircleSpinner
+              size={size}
+              color={color}
+              innerBorderWidth={innerBorderWidth}
+              outerBorderWidth={outerBorderWidth}
+              innerBorderOpacity={innerBorderOpacity}
+              outerBorderOpacity={outerBorderOpacity}
+            />
+          </Overlay>
+        )}
+      </>
+    );
+  };
