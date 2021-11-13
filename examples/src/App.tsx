@@ -1,7 +1,9 @@
 import React, { useState } from "react";
-import { CircleSpinner } from "../../src/components/CircleSpinner";
+import {
+  CircleSpinner,
+  CircleSpinnerOverlay,
+} from "../../src/components/CircleSpinner";
 import { DartsSpinner } from "../../src/components/DartsSpinner";
-import { Overlay } from "../../src/components/Overlay";
 import { LineLoader } from "../../src/components/LineLoader";
 import { SimpleSpinner } from "../../src/components/SimpleSpinner";
 import "../../src/index.css";
@@ -242,12 +244,10 @@ function App() {
           </SectionContainer>
         </div>
       </div>
-      <Overlay loading={showOverlay}>
-        <>
-          <CircleSpinner />
-          <p>Wait two seconds.</p>
-        </>
-      </Overlay>
+      <CircleSpinnerOverlay
+        loading={showOverlay}
+        message={<div style={{ marginTop: "8px" }}>Loading...</div>}
+      />
     </div>
   );
 }

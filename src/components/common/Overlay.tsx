@@ -1,13 +1,17 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
-type Props = { loading: boolean; overlayColor?: string; zIndex?: number };
+export type OverlayProps = {
+  overlayColor?: string;
+  zIndex?: number;
+  message?: string | JSX.Element;
+};
 
-export const Overlay: React.FC<Props> = ({
+export const Overlay: React.FC<OverlayProps> = ({
   children,
-  loading,
-  overlayColor = "rgb(212 228 228 / 56%)",
+  overlayColor = "rgb(255 255 255 / 70%)",
   zIndex = 500,
+  message,
 }) => {
   const OverlayBody: React.FC = ({ children }) =>
     ReactDOM.createPortal(
@@ -27,9 +31,10 @@ export const Overlay: React.FC<Props> = ({
         }}
       >
         {children}
+        {message && <>{message}</>}
       </div>,
       document.body
     );
 
-  return <>{loading && <OverlayBody>{children}</OverlayBody>}</>;
+  return <OverlayBody>{children}</OverlayBody>;
 };
