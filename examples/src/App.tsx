@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { CircleSpinner } from "../../src/components/CircleSpinner";
-import { RouletteSpinner } from "../../src/components/RouletteSpinner";
+import { DartsSpinner } from "../../src/components/DartsSpinner";
 import { Overlay } from "../../src/components/Overlay";
 import { LineLoader } from "../../src/components/LineLoader";
 import { SimpleSpinner } from "../../src/components/SimpleSpinner";
@@ -10,6 +10,7 @@ import { DotCircleSpinner } from "../../src/components/DotCircleSpinner";
 import { FerrisWheelSpinner } from "../../src/components/FerrisWheelSpinner";
 import { BounceLetterLoader } from "../../src/components/BounceLetterLoader";
 import { DotLoader } from "../../src/components/DotLoader";
+import { RouletteSpinner } from "../../src/components/RouletteSpinner";
 
 function App() {
   const [showOverlay, setShowOverlay] = useState<boolean>(false);
@@ -221,11 +222,14 @@ function App() {
           <SectionContainer title={"<SimpleSpinner />"}>
             <SimpleSpinner />
           </SectionContainer>
-          <SectionContainer title={"<RouletteSpinner />"}>
-            <RouletteSpinner />
+          <SectionContainer title={"<DartsSpinner />"}>
+            <DartsSpinner />
           </SectionContainer>
           <SectionContainer title={"<DotCircleSpinner />"}>
             <DotCircleSpinner />
+          </SectionContainer>
+          <SectionContainer title={"<RouletteSpinner />"}>
+            <RouletteSpinner />
           </SectionContainer>
           <SectionContainer title={"<FerrisWheelSpinner />"}>
             <FerrisWheelSpinner />
