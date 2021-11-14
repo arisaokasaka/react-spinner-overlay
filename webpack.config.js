@@ -32,13 +32,13 @@ module.exports = {
       name: "react-spinner-overlay",
       type: "umd",
     },
-    externals: {
-      lodash: {
-        commonjs: "lodash",
-        commonjs2: "lodash",
-        amd: "lodash",
-        root: "_",
-      },
+  },
+  externals: {
+    lodash: {
+      commonjs: "lodash",
+      commonjs2: "lodash",
+      amd: "lodash",
+      root: "_",
     },
   },
   resolve: {
