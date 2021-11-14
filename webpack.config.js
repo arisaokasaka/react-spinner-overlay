@@ -32,6 +32,7 @@ module.exports = {
     },
     path: path.join(__dirname, "./dist"),
     filename: "index.js",
+    globalObject: "this",
   },
   resolve: {
     extensions: ["*", ".js", ".jsx", ".ts", ".tsx"],
