@@ -296,23 +296,6 @@ function App() {
           </SectionContainer>
 
           <SectionContainer
-            title={"<DartsSpinner />"}
-            setShowOverlay={(nextShowStatus: boolean) =>
-              setOverlay({ ...overlay, dartsSpinner: nextShowStatus })
-            }
-          >
-            <DartsSpinner />
-            <DartsSpinnerOverlay
-              loading={overlay.dartsSpinner}
-              message={
-                <p style={{ marginTop: "12px" }}>
-                  If you want, you can insert message!
-                </p>
-              }
-            />
-          </SectionContainer>
-
-          <SectionContainer
             title={"<FerrisWheelSpinner />"}
             setShowOverlay={(nextShowStatus: boolean) =>
               setOverlay({ ...overlay, ferrisWheelSpinner: nextShowStatus })
@@ -355,6 +338,23 @@ function App() {
             <WindmillSpinner />
             <WindmillSpinnerOverlay
               loading={overlay.windmillSpinner}
+              message={
+                <p style={{ marginTop: "12px" }}>
+                  If you want, you can insert message!
+                </p>
+              }
+            />
+          </SectionContainer>
+
+          <SectionContainer
+            title={"<DartsSpinner />"}
+            setShowOverlay={(nextShowStatus: boolean) =>
+              setOverlay({ ...overlay, dartsSpinner: nextShowStatus })
+            }
+          >
+            <DartsSpinner />
+            <DartsSpinnerOverlay
+              loading={overlay.dartsSpinner}
               message={
                 <p style={{ marginTop: "12px" }}>
                   If you want, you can insert message!
