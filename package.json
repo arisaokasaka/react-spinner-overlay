@@ -32,8 +32,8 @@
     "loading-overlay",
     "spinner-overlay"
   ],
-  "main": "dist/index.js",
-  "module": "dist/index.js",
+  "main": "dist/bundle.js",
+  "module": "dist/bundle.js",
   "files": [
     "dist"
   ],
