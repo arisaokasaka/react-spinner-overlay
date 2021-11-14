@@ -147,7 +147,7 @@ function App() {
             fontSize: "14px",
           }}
         >
-          $ yarn add -D react-spinner-overlay
+          $ yarn add react-spinner-overlay
         </code>
         <code
           style={{
@@ -157,7 +157,7 @@ function App() {
             fontSize: "14px",
           }}
         >
-          $ npm install --save-dev react-spinner-overlay
+          $ npm install --save react-spinner-overlay
         </code>
 
         <div
