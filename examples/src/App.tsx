@@ -47,7 +47,7 @@ function App() {
 
   const SectionContainer: React.FC<{
     title: string;
-    setShowOverlay: (nextStatus: boolean) => void;
+    setShowOverlay: (nextShowStatus: boolean) => void;
   }> = ({ title, setShowOverlay, children }) => {
     return (
       <section
@@ -79,7 +79,6 @@ function App() {
             cursor: "pointer",
           }}
           onClick={() => {
-            console.log("clicked");
             setShowOverlay(true);
             setTimeout(() => setShowOverlay(false), 2000);
           }}
