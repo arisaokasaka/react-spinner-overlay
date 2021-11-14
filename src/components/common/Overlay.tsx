@@ -14,7 +14,7 @@ export const Overlay: React.FC<OverlayProps> = ({
   message,
 }) => {
   const OverlayBody: React.FC = ({ children }) => {
-    if (document) {
+    if (typeof document !== undefined) {
       return ReactDOM.createPortal(
         <div
           style={{
