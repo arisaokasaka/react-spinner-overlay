@@ -1,3 +1,4 @@
+import "../index.css";
 import React from "react";
 import { Overlay, OverlayProps } from "./common/Overlay";
 
