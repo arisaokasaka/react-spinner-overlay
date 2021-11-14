@@ -32,7 +32,7 @@ module.exports = {
       name: "react-spinner-overlay",
       type: "umd",
     },
-    globalObject: "typeof self !== 'undefined' ? self : this",
+    globalObject: "this",
   },
   externals: {
     lodash: {
