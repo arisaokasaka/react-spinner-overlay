@@ -52,13 +52,14 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "rm -rf dist && babel --extensions '.tsx' src --out-dir dist --copy-files",
+    "build": "rm -rf dist && babel --extensions '.tsx' src --out-dir dist --copy-files && yarn type",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "dev:demo": "webpack-dev-server --mode development",
     "build:demo": "rm -rf examples/dist && webpack --mode production",
     "publish:demo": "yarn build:demo && gh-pages -d examples/dist",
-    "prepublishOnly": "yarn build"
+    "prepublishOnly": "yarn build",
+    "type": "tsc --project . --outDir ./dist"
   },
   "eslintConfig": {
     "extends": [
