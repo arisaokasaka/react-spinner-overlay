@@ -1,4 +1,4 @@
-import "../animation.css";
+import "../style/animation.css";
 import React from "react";
 import { Overlay, OverlayProps } from "./common/Overlay";
 
