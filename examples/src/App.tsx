@@ -12,7 +12,6 @@ import {
   SimpleSpinner,
   SimpleSpinnerOverlay,
 } from "../../src/components/SimpleSpinner";
-import "../../src/index.css";
 import "./index.css";
 import {
   FerrisWheelSpinner,
