@@ -13,8 +13,32 @@ export const Overlay: React.FC<OverlayProps> = ({
   zIndex = 500,
   message,
 }) => {
-  const OverlayBody: React.FC = ({ children }) =>
-    ReactDOM.createPortal(
+  const OverlayBody: React.FC = ({ children }) => {
+    if (document) {
+      return ReactDOM.createPortal(
+        <div
+          style={{
+            position: "fixed",
+            top: "0",
+            left: "0",
+            bottom: "0",
+            right: "0",
+            display: "flex",
+            justifyContent: "center",
+            flexDirection: "column",
+            alignItems: "center",
+            backgroundColor: overlayColor,
+            zIndex: zIndex,
+          }}
+        >
+          {children}
+          {message && <>{message}</>}
+        </div>,
+        document.body
+      );
+    }
+
+    return (
       <div
         style={{
           position: "fixed",
@@ -32,9 +56,9 @@ export const Overlay: React.FC<OverlayProps> = ({
       >
         {children}
         {message && <>{message}</>}
-      </div>,
-      document.body
+      </div>
     );
+  };
 
   return <OverlayBody>{children}</OverlayBody>;
 };
