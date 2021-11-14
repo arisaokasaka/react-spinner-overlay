@@ -26,12 +26,10 @@ module.exports = {
     ],
   },
   output: {
-    library: {
-      name: "react-spinner-overlay",
-      type: "umd",
-    },
-    path: path.join(__dirname, "./dist"),
     filename: "index.js",
+    path: path.resolve(__dirname, "dist"),
+    library: "react-spinner-overlay",
+    libraryTarget: "umd",
     globalObject: "this",
   },
   resolve: {
