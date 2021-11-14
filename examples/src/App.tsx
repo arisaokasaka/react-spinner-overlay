@@ -1,35 +1,14 @@
-import React, { useState } from "react";
-import {
-  CircleSpinner,
-  CircleSpinnerOverlay,
-} from "../../src/components/CircleSpinner";
-import {
-  DartsSpinner,
-  DartsSpinnerOverlay,
-} from "../../src/components/DartsSpinner";
-import { LineLoader, LineLoaderOverlay } from "../../src/components/LineLoader";
-import {
-  SimpleSpinner,
-  SimpleSpinnerOverlay,
-} from "../../src/components/SimpleSpinner";
 import "./index.css";
-import {
-  FerrisWheelSpinner,
-  FerrisWheelSpinnerOverlay,
-} from "../../src/components/FerrisWheelSpinner";
-import {
-  WindmillSpinner,
-  WindmillSpinnerOverlay,
-} from "../../src/components/WindmillSpinner";
-import {
-  BounceLetterLoader,
-  BounceLetterLoaderOverlay,
-} from "../../src/components/BounceLetterLoader";
-import { DotLoader, DotLoaderOverlay } from "../../src/components/DotLoader";
-import {
-  RouletteSpinner,
-  RouletteSpinnerOverlay,
-} from "../../src/components/RouletteSpinner";
+import React, { useState } from "react";
+import { CircleSpinner, CircleSpinnerOverlay } from "../../src/index";
+import { DartsSpinner, DartsSpinnerOverlay } from "../../src/index";
+import { LineLoader, LineLoaderOverlay } from "../../src/index";
+import { SimpleSpinner, SimpleSpinnerOverlay } from "../../src/index";
+import { FerrisWheelSpinner, FerrisWheelSpinnerOverlay } from "../../src/index";
+import { WindmillSpinner, WindmillSpinnerOverlay } from "../../src/index";
+import { BounceLetterLoader, BounceLetterLoaderOverlay } from "../../src/index";
+import { DotLoader, DotLoaderOverlay } from "../../src/index";
+import { RouletteSpinner, RouletteSpinnerOverlay } from "../../src/index";
 
 function App() {
   const [overlay, setOverlay] = useState({
