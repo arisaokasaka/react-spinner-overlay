@@ -9,7 +9,7 @@ export type OverlayProps = {
 
 export const Overlay: React.FC<OverlayProps> = ({
   children,
-  overlayColor = "rgb(255 255 255 / 70%)",
+  overlayColor = "rgb(255 255 255 / 80%)",
   zIndex = 500,
   message,
 }) => {
