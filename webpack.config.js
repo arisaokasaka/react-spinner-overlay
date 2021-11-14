@@ -28,9 +28,18 @@ module.exports = {
   output: {
     filename: "index.js",
     path: path.resolve(__dirname, "dist"),
-    library: "react-spinner-overlay",
-    libraryTarget: "umd",
-    globalObject: "this",
+    library: {
+      name: "react-spinner-overlay",
+      type: "umd",
+    },
+    externals: {
+      lodash: {
+        commonjs: "lodash",
+        commonjs2: "lodash",
+        amd: "lodash",
+        root: "_",
+      },
+    },
   },
   resolve: {
     extensions: ["*", ".js", ".jsx", ".ts", ".tsx"],
