@@ -52,7 +52,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "rm -rf dist && webpack --config webpack.config.js --mode production && type",
+    "build": "rm -rf dist && webpack --config webpack.config.js --mode production && yarn type",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "dev:demo": "webpack-dev-server --config webpack.config.demo.js --mode development",
