@@ -1,6 +1,7 @@
 import React from "react";
+import { Overlay, OverlayProps } from "./common/Overlay";
 
-type Props = {
+type LineLoaderProps = {
   loading?: boolean;
   width?: number;
   height?: number;
@@ -9,7 +10,7 @@ type Props = {
   borderRadius?: number;
 };
 
-export const LineLoader: React.FC<Props> = ({
+export const LineLoader: React.FC<LineLoaderProps> = ({
   loading = true,
   width = 60,
   height = 4,
@@ -54,6 +55,34 @@ export const LineLoader: React.FC<Props> = ({
             }}
           ></div>
         </div>
+      )}
+    </>
+  );
+};
+
+export const LineLoaderOverlay: React.FC<LineLoaderProps & OverlayProps> = ({
+  loading = true,
+  width,
+  height,
+  color,
+  bgOpacity,
+  borderRadius,
+  overlayColor,
+  zIndex,
+  message,
+}) => {
+  return (
+    <>
+      {loading && (
+        <Overlay overlayColor={overlayColor} zIndex={zIndex} message={message}>
+          <LineLoader
+            width={width}
+            height={height}
+            color={color}
+            bgOpacity={bgOpacity}
+            borderRadius={borderRadius}
+          />
+        </Overlay>
       )}
     </>
   );

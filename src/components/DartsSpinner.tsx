@@ -1,14 +1,13 @@
 import React from "react";
+import { Overlay, OverlayProps } from "./common/Overlay";
 
-type Props = {
+type DartsSpinnerProps = {
   loading?: boolean;
   size?: number;
   color?: string;
-  innerBorderWidth?: number;
-  outerBorderWidth?: number;
 };
 
-export const DartsSpinner: React.FC<Props> = ({
+export const DartsSpinner: React.FC<DartsSpinnerProps> = ({
   loading = true,
   size = 60,
   color = "#00ced1",
@@ -70,3 +69,20 @@ export const DartsSpinner: React.FC<Props> = ({
     </>
   );
 };
+
+export const DartsSpinnerOverlay: React.FC<DartsSpinnerProps & OverlayProps> =
+  ({ loading = true, size, color, overlayColor, zIndex, message }) => {
+    return (
+      <>
+        {loading && (
+          <Overlay
+            overlayColor={overlayColor}
+            zIndex={zIndex}
+            message={message}
+          >
+            <DartsSpinner size={size} color={color} />
+          </Overlay>
+        )}
+      </>
+    );
+  };

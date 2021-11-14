@@ -1,13 +1,14 @@
 import React from "react";
+import { Overlay, OverlayProps } from "./common/Overlay";
 
-type Props = {
+type SimpleSpinnerProps = {
   loading?: boolean;
   size?: number;
   color?: string;
   borderWidth?: number;
 };
 
-export const SimpleSpinner: React.FC<Props> = ({
+export const SimpleSpinner: React.FC<SimpleSpinnerProps> = ({
   loading = true,
   size = 60,
   color = "#00ced1",
@@ -34,3 +35,32 @@ export const SimpleSpinner: React.FC<Props> = ({
     </>
   );
 };
+
+export const SimpleSpinnerOverlay: React.FC<SimpleSpinnerProps & OverlayProps> =
+  ({
+    loading = true,
+    size,
+    color,
+    borderWidth,
+    overlayColor,
+    zIndex,
+    message,
+  }) => {
+    return (
+      <>
+        {loading && (
+          <Overlay
+            overlayColor={overlayColor}
+            zIndex={zIndex}
+            message={message}
+          >
+            <SimpleSpinner
+              size={size}
+              color={color}
+              borderWidth={borderWidth}
+            />
+          </Overlay>
+        )}
+      </>
+    );
+  };
