@@ -3,32 +3,61 @@ import {
   CircleSpinner,
   CircleSpinnerOverlay,
 } from "../../src/components/CircleSpinner";
-import { DartsSpinner } from "../../src/components/DartsSpinner";
-import { LineLoader } from "../../src/components/LineLoader";
-import { SimpleSpinner } from "../../src/components/SimpleSpinner";
+import {
+  DartsSpinner,
+  DartsSpinnerOverlay,
+} from "../../src/components/DartsSpinner";
+import { LineLoader, LineLoaderOverlay } from "../../src/components/LineLoader";
+import {
+  SimpleSpinner,
+  SimpleSpinnerOverlay,
+} from "../../src/components/SimpleSpinner";
 import "../../src/index.css";
 import "./index.css";
-import { FerrisWheelSpinner } from "../../src/components/FerrisWheelSpinner";
-import { WindmillSpinner } from "../../src/components/WindmillSpinner";
-import { BounceLetterLoader } from "../../src/components/BounceLetterLoader";
-import { DotLoader } from "../../src/components/DotLoader";
-import { RouletteSpinner } from "../../src/components/RouletteSpinner";
+import {
+  FerrisWheelSpinner,
+  FerrisWheelSpinnerOverlay,
+} from "../../src/components/FerrisWheelSpinner";
+import {
+  WindmillSpinner,
+  WindmillSpinnerOverlay,
+} from "../../src/components/WindmillSpinner";
+import {
+  BounceLetterLoader,
+  BounceLetterLoaderOverlay,
+} from "../../src/components/BounceLetterLoader";
+import { DotLoader, DotLoaderOverlay } from "../../src/components/DotLoader";
+import {
+  RouletteSpinner,
+  RouletteSpinnerOverlay,
+} from "../../src/components/RouletteSpinner";
 
 function App() {
-  const [showOverlay, setShowOverlay] = useState<boolean>(false);
+  const [overlay, setOverlay] = useState({
+    circleSpinner: false,
+    lineLoader: false,
+    simpleSpinner: false,
+    dartsSpinner: false,
+    ferrisWheelSpinner: false,
+    rouletteSpinner: false,
+    windmillSpinner: false,
+    dotLoader: false,
+    bounceLetterLoader: false,
+  });
 
-  const SectionContainer: React.FC<{ title: string }> = ({
-    title,
-    children,
-  }) => {
+  const SectionContainer: React.FC<{
+    title: string;
+    setShowOverlay: (nextStatus: boolean) => void;
+  }> = ({ title, setShowOverlay, children }) => {
     return (
       <section
         style={{
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
-          padding: "20px 12px",
-          margin: "16px",
+          justifyContent: "space-between",
+          padding: "20px 8px",
+          margin: "12px",
           textAlign: "center",
           border: "1px solid rgb(212 228 228)",
           width: "280px",
@@ -38,6 +67,25 @@ function App() {
       >
         <code style={{ fontSize: "14px", marginBottom: "24px" }}>{title}</code>
         {children}
+        <button
+          style={{
+            border: "none",
+            backgroundColor: "#00ced1",
+            color: "#fff",
+            fontWeight: "bolder",
+            padding: "4px 6px",
+            marginTop: "16px",
+            fontSize: "12px",
+            cursor: "pointer",
+          }}
+          onClick={() => {
+            console.log("clicked");
+            setShowOverlay(true);
+            setTimeout(() => setShowOverlay(false), 2000);
+          }}
+        >
+          Overlay
+        </button>
       </section>
     );
   };
@@ -112,24 +160,6 @@ function App() {
         >
           $ npm install --save-dev react-spinner-overlay
         </code>
-        <button
-          style={{
-            border: "none",
-            backgroundColor: "#00ced1",
-            color: "#fff",
-            fontWeight: "bolder",
-            padding: "12px",
-            marginTop: "52px",
-            fontSize: "16px",
-            cursor: "pointer",
-          }}
-          onClick={() => {
-            setShowOverlay(true);
-            setTimeout(() => setShowOverlay(false), 2000);
-          }}
-        >
-          Show Overlay
-        </button>
 
         <div
           style={{
@@ -140,7 +170,12 @@ function App() {
             maxWidth: "1200px",
           }}
         >
-          <SectionContainer title={"<CircleSpinner />"}>
+          <SectionContainer
+            title={"<CircleSpinner />"}
+            setShowOverlay={(nextShowStatus: boolean) =>
+              setOverlay({ ...overlay, circleSpinner: nextShowStatus })
+            }
+          >
             <div
               style={{
                 display: "grid",
@@ -172,8 +207,22 @@ function App() {
                 </p>
               </div>
             </div>
+            <CircleSpinnerOverlay
+              loading={overlay.circleSpinner}
+              message={
+                <p style={{ marginTop: "12px" }}>
+                  If you want, you can insert message!
+                </p>
+              }
+            />
           </SectionContainer>
-          <SectionContainer title={"<LineLoader />"}>
+
+          <SectionContainer
+            title={"<LineLoader />"}
+            setShowOverlay={(nextShowStatus: boolean) =>
+              setOverlay({ ...overlay, lineLoader: nextShowStatus })
+            }
+          >
             <div
               style={{
                 display: "grid",
@@ -220,34 +269,136 @@ function App() {
                 </p>
               </div>
             </div>
+            <LineLoaderOverlay
+              loading={overlay.lineLoader}
+              message={
+                <p style={{ marginTop: "12px" }}>
+                  If you want, you can insert message!
+                </p>
+              }
+            />
           </SectionContainer>
-          <SectionContainer title={"<SimpleSpinner />"}>
+
+          <SectionContainer
+            title={"<SimpleSpinner />"}
+            setShowOverlay={(nextShowStatus: boolean) =>
+              setOverlay({ ...overlay, simpleSpinner: nextShowStatus })
+            }
+          >
             <SimpleSpinner />
+            <SimpleSpinnerOverlay
+              loading={overlay.simpleSpinner}
+              message={
+                <p style={{ marginTop: "12px" }}>
+                  If you want, you can insert message!
+                </p>
+              }
+            />
           </SectionContainer>
-          <SectionContainer title={"<DartsSpinner />"}>
+
+          <SectionContainer
+            title={"<DartsSpinner />"}
+            setShowOverlay={(nextShowStatus: boolean) =>
+              setOverlay({ ...overlay, dartsSpinner: nextShowStatus })
+            }
+          >
             <DartsSpinner />
+            <DartsSpinnerOverlay
+              loading={overlay.dartsSpinner}
+              message={
+                <p style={{ marginTop: "12px" }}>
+                  If you want, you can insert message!
+                </p>
+              }
+            />
           </SectionContainer>
-          <SectionContainer title={"<FerrisWheelSpinner />"}>
+
+          <SectionContainer
+            title={"<FerrisWheelSpinner />"}
+            setShowOverlay={(nextShowStatus: boolean) =>
+              setOverlay({ ...overlay, ferrisWheelSpinner: nextShowStatus })
+            }
+          >
             <FerrisWheelSpinner />
+            <FerrisWheelSpinnerOverlay
+              loading={overlay.ferrisWheelSpinner}
+              message={
+                <p style={{ marginTop: "12px" }}>
+                  If you want, you can insert message!
+                </p>
+              }
+            />
           </SectionContainer>
-          <SectionContainer title={"<RouletteSpinner />"}>
+
+          <SectionContainer
+            title={"<RouletteSpinner />"}
+            setShowOverlay={(nextShowStatus: boolean) =>
+              setOverlay({ ...overlay, rouletteSpinner: nextShowStatus })
+            }
+          >
             <RouletteSpinner />
+            <RouletteSpinnerOverlay
+              loading={overlay.rouletteSpinner}
+              message={
+                <p style={{ marginTop: "12px" }}>
+                  If you want, you can insert message!
+                </p>
+              }
+            />
           </SectionContainer>
-          <SectionContainer title={"<WindmillSpinner />"}>
+
+          <SectionContainer
+            title={"<WindmillSpinner />"}
+            setShowOverlay={(nextShowStatus: boolean) =>
+              setOverlay({ ...overlay, windmillSpinner: nextShowStatus })
+            }
+          >
             <WindmillSpinner />
+            <WindmillSpinnerOverlay
+              loading={overlay.windmillSpinner}
+              message={
+                <p style={{ marginTop: "12px" }}>
+                  If you want, you can insert message!
+                </p>
+              }
+            />
           </SectionContainer>
-          <SectionContainer title={"<DotLoader />"}>
+
+          <SectionContainer
+            title={"<DotLoader />"}
+            setShowOverlay={(nextShowStatus: boolean) =>
+              setOverlay({ ...overlay, dotLoader: nextShowStatus })
+            }
+          >
             <DotLoader />
+            <DotLoaderOverlay
+              loading={overlay.dotLoader}
+              message={
+                <p style={{ marginTop: "12px" }}>
+                  If you want, you can insert message!
+                </p>
+              }
+            />
           </SectionContainer>
-          <SectionContainer title={"<BounceLetterLoader />"}>
+
+          <SectionContainer
+            title={"<BounceLetterLoader />"}
+            setShowOverlay={(nextShowStatus: boolean) =>
+              setOverlay({ ...overlay, bounceLetterLoader: nextShowStatus })
+            }
+          >
             <BounceLetterLoader />
+            <BounceLetterLoaderOverlay
+              loading={overlay.bounceLetterLoader}
+              message={
+                <p style={{ marginTop: "12px" }}>
+                  If you want, you can insert message!
+                </p>
+              }
+            />
           </SectionContainer>
         </div>
       </div>
-      <CircleSpinnerOverlay
-        loading={showOverlay}
-        message={<div style={{ marginTop: "8px" }}>Loading...</div>}
-      />
     </div>
   );
 }
