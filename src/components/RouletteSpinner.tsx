@@ -1,12 +1,13 @@
 import React from "react";
+import { Overlay, OverlayProps } from "./common/Overlay";
 
-type Props = {
+type RouletteSpinnerProps = {
   loading?: boolean;
   size?: number;
   color?: string;
 };
 
-export const RouletteSpinner: React.FC<Props> = ({
+export const RouletteSpinner: React.FC<RouletteSpinnerProps> = ({
   loading = true,
   size = 40,
   color = "#00ced1",
@@ -63,6 +64,20 @@ export const RouletteSpinner: React.FC<Props> = ({
           <Border rotate={270} index={7} />
           <Border rotate={315} index={8} />
         </div>
+      )}
+    </>
+  );
+};
+
+export const RouletteSpinnerOverlay: React.FC<
+  RouletteSpinnerProps & OverlayProps
+> = ({ loading = true, size, color, overlayColor, zIndex, message }) => {
+  return (
+    <>
+      {loading && (
+        <Overlay overlayColor={overlayColor} zIndex={zIndex} message={message}>
+          <RouletteSpinner size={size} color={color} />
+        </Overlay>
       )}
     </>
   );

@@ -1,6 +1,7 @@
 import React from "react";
+import { Overlay, OverlayProps } from "./common/Overlay";
 
-type Props = {
+type BounceLetterLoaderProps = {
   letters?: string;
   loading?: boolean;
   width?: number;
@@ -9,7 +10,7 @@ type Props = {
   animationDelay?: number;
 };
 
-export const BounceLetterLoader: React.FC<Props> = ({
+export const BounceLetterLoader: React.FC<BounceLetterLoaderProps> = ({
   loading = true,
   letters = "Loading...",
   color = "#00ced1",
@@ -42,6 +43,32 @@ export const BounceLetterLoader: React.FC<Props> = ({
             </span>
           ))}
         </div>
+      )}
+    </>
+  );
+};
+
+export const BounceLetterLoaderOverlay: React.FC<
+  BounceLetterLoaderProps & OverlayProps
+> = ({
+  loading = true,
+  letters,
+  color,
+  animationDelay,
+  overlayColor,
+  zIndex,
+  message,
+}) => {
+  return (
+    <>
+      {loading && (
+        <Overlay overlayColor={overlayColor} zIndex={zIndex} message={message}>
+          <BounceLetterLoader
+            letters={letters}
+            animationDelay={animationDelay}
+            color={color}
+          />
+        </Overlay>
       )}
     </>
   );

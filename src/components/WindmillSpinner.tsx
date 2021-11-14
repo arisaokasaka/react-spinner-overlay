@@ -1,6 +1,7 @@
 import React from "react";
+import { Overlay, OverlayProps } from "./common/Overlay";
 
-type Props = {
+type WindmillSpinnerProps = {
   loading?: boolean;
   size?: number;
   color?: string;
@@ -9,7 +10,7 @@ type Props = {
   borderRadius?: number;
 };
 
-export const WindmillSpinner: React.FC<Props> = ({
+export const WindmillSpinner: React.FC<WindmillSpinnerProps> = ({
   loading = true,
   size = 40,
   color = "#00ced1",
@@ -68,6 +69,36 @@ export const WindmillSpinner: React.FC<Props> = ({
           <Border rotate={270} />
           <Border rotate={315} />
         </div>
+      )}
+    </>
+  );
+};
+
+export const WindmillSpinnerOverlay: React.FC<
+  WindmillSpinnerProps & OverlayProps
+> = ({
+  loading = true,
+  size = 40,
+  color = "#00ced1",
+  borderWidth = 4,
+  borderHeight = 10,
+  borderRadius = 8,
+  overlayColor,
+  zIndex,
+  message,
+}) => {
+  return (
+    <>
+      {loading && (
+        <Overlay overlayColor={overlayColor} zIndex={zIndex} message={message}>
+          <WindmillSpinner
+            size={size}
+            color={color}
+            borderWidth={borderWidth}
+            borderHeight={borderHeight}
+            borderRadius={borderRadius}
+          />
+        </Overlay>
       )}
     </>
   );
