@@ -1,4 +1,3 @@
-import "./animation.css";
 export {
   BounceLetterLoader,
   BounceLetterLoaderOverlay,

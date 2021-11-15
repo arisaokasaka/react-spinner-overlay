@@ -1,0 +1,17 @@
+.bounce-vertically-90 {
+    animation: bounce-vertically-90 infinite 1200ms ease;
+}
+
+@keyframes bounce-vertically-90 {
+  0% {
+    transform: translateY(0%);
+  }
+
+  10% {
+    transform: translateY(-90%);
+  }
+
+  25% {
+    transform: translateY(0%);
+  }
+}

@@ -1,4 +1,5 @@
 import React from "react";
+import "../animation/fading-four-count.css";
 import { Overlay, OverlayProps } from "./common/Overlay";
 
 type DartsSpinnerProps = {

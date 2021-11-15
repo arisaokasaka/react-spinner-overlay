@@ -1,4 +1,5 @@
 import React from "react";
+import "../animation/rotate-infinite.css";
 import { Overlay, OverlayProps } from "./common/Overlay";
 
 type FerrisWheelSpinnerProps = {

@@ -1,0 +1,17 @@
+.bounce-vertically-40 {
+    animation: bounce-vertically-40 infinite 2000ms ease;
+}
+  
+@keyframes bounce-vertically-40 {
+  0% {
+    transform: translateY(0%);
+  }
+
+  10% {
+    transform: translateY(-40%);
+  }
+  
+  20% {
+    transform: translateY(0%);
+  }
+}
