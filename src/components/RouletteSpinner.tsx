@@ -1,4 +1,5 @@
 import React from "react";
+import "../animation/roulette.css";
 import { Overlay, OverlayProps } from "./common/Overlay";
 
 type RouletteSpinnerProps = {

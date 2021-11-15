@@ -1,0 +1,17 @@
+.rotate-infinite {
+  animation: rotate-infinite infinite 1000ms linear;
+}
+
+.rotate-infinite-slow {
+  animation: rotate-infinite infinite 2000ms linear;
+}
+
+@keyframes rotate-infinite {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}

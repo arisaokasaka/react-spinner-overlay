@@ -1,4 +1,5 @@
 import React from "react";
+import "../animation/bounce-vertically-40.css";
 import { Overlay, OverlayProps } from "./common/Overlay";
 
 type BounceLetterLoaderProps = {

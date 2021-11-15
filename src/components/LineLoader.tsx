@@ -1,4 +1,5 @@
 import React from "react";
+import "../animation/swing-horizontally.css";
 import { Overlay, OverlayProps } from "./common/Overlay";
 
 type LineLoaderProps = {
