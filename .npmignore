@@ -4,7 +4,7 @@ examples
 .babelrc
 .gitignore
 webpack.config.js
-webpack.config.demo.js
 postcss.config.js
 rollup.config.js
 node_modules
+__tests__
