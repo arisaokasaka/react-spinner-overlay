@@ -30,6 +30,7 @@ export const LineLoader: React.FC<LineLoaderProps> = ({
             height: `${height}px`,
             borderRadius: `${borderRadius}px`,
             overflow: "hidden",
+            zIndex: 1,
           }}
         >
           <div

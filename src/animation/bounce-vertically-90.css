@@ -1,5 +1,5 @@
 .bounce-vertically-90 {
-    animation: bounce-vertically-90 infinite 1200ms ease;
+    animation: bounce-vertically-90 infinite 1000ms ease;
 }
 
 @keyframes bounce-vertically-90 {

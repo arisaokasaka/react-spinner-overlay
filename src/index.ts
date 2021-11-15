@@ -17,10 +17,7 @@ export {
   RouletteSpinner,
   RouletteSpinnerOverlay,
 } from "./components/RouletteSpinner";
-export {
-  SimpleSpinner,
-  SimpleSpinnerOverlay,
-} from "./components/SimpleSpinner";
+export { RingSpinner, RingSpinnerOverlay } from "./components/RingSpinner";
 export {
   WindmillSpinner,
   WindmillSpinnerOverlay,

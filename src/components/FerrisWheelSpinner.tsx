@@ -10,7 +10,7 @@ type FerrisWheelSpinnerProps = {
 
 export const FerrisWheelSpinner: React.FC<FerrisWheelSpinnerProps> = ({
   loading = true,
-  size = 40,
+  size = 32,
   color = "#00ced1",
 }) => {
   const Border: React.FC<{
@@ -31,8 +31,8 @@ export const FerrisWheelSpinner: React.FC<FerrisWheelSpinnerProps> = ({
           style={{
             display: "block",
             backgroundColor: color,
-            width: `20%`,
-            height: `20%`,
+            width: `22%`,
+            height: `22%`,
             borderRadius: "100%",
           }}
         ></span>
