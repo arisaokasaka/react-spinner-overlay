@@ -10,7 +10,7 @@ type DartsSpinnerProps = {
 
 export const DartsSpinner: React.FC<DartsSpinnerProps> = ({
   loading = true,
-  size = 60,
+  size = 48,
   color = "#00ced1",
 }) => {
   return (

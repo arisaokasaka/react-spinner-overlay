@@ -14,9 +14,9 @@ type CircleSpinnerProps = {
 
 export const CircleSpinner: React.FC<CircleSpinnerProps> = ({
   loading = true,
-  size = 60,
+  size = 42,
   color = "#00ced1",
-  innerBorderWidth = 8,
+  innerBorderWidth = 6,
   outerBorderWidth = 1,
   innerBorderOpacity = 1,
   outerBorderOpacity = 1,

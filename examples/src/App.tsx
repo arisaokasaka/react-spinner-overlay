@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { CircleSpinner, CircleSpinnerOverlay } from "../../src/index";
 import { DartsSpinner, DartsSpinnerOverlay } from "../../src/index";
 import { LineLoader, LineLoaderOverlay } from "../../src/index";
-import { SimpleSpinner, SimpleSpinnerOverlay } from "../../src/index";
+import { RingSpinner, RingSpinnerOverlay } from "../../src/index";
 import { FerrisWheelSpinner, FerrisWheelSpinnerOverlay } from "../../src/index";
 import { WindmillSpinner, WindmillSpinnerOverlay } from "../../src/index";
 import { BounceLetterLoader, BounceLetterLoaderOverlay } from "../../src/index";
@@ -14,7 +14,7 @@ function App() {
   const [overlay, setOverlay] = useState({
     circleSpinner: false,
     lineLoader: false,
-    simpleSpinner: false,
+    ringSpinner: false,
     dartsSpinner: false,
     ferrisWheelSpinner: false,
     rouletteSpinner: false,
@@ -26,7 +26,13 @@ function App() {
   const SectionContainer: React.FC<{
     title: string;
     setShowOverlay: (nextShowStatus: boolean) => void;
-  }> = ({ title, setShowOverlay, children }) => {
+    overlayButtonColor?: string;
+  }> = ({
+    title,
+    setShowOverlay,
+    overlayButtonColor = "#00ced1",
+    children,
+  }) => {
     return (
       <section
         style={{
@@ -48,7 +54,7 @@ function App() {
         <button
           style={{
             border: "none",
-            backgroundColor: "#00ced1",
+            backgroundColor: overlayButtonColor,
             color: "#fff",
             fontWeight: "bolder",
             padding: "4px 6px",
@@ -176,11 +182,11 @@ function App() {
                   alignItems: "center",
                 }}
               >
-                <CircleSpinner outerBorderOpacity={0.3} outerBorderWidth={8} />
+                <CircleSpinner outerBorderOpacity={0.3} outerBorderWidth={6} />
                 <p style={{ marginTop: "16px", fontSize: "12px" }}>
                   outerBorderOpacity={0.3}
                   <br />
-                  outerBorderWidth={8}
+                  outerBorderWidth={6}
                 </p>
               </div>
             </div>
@@ -199,6 +205,7 @@ function App() {
             setShowOverlay={(nextShowStatus: boolean) =>
               setOverlay({ ...overlay, lineLoader: nextShowStatus })
             }
+            overlayButtonColor="#32C7BB"
           >
             <div
               style={{
@@ -221,7 +228,7 @@ function App() {
                     height: "60px",
                   }}
                 >
-                  <LineLoader />
+                  <LineLoader color="#32C7BB" />
                 </div>
                 <p style={{ marginTop: "16px", fontSize: "12px" }}>default</p>
               </div>
@@ -239,7 +246,7 @@ function App() {
                     height: "60px",
                   }}
                 >
-                  <LineLoader bgOpacity={0} />
+                  <LineLoader bgOpacity={0} color="#32C7BB" />
                 </div>
                 <p style={{ marginTop: "16px", fontSize: "12px" }}>
                   bgOpacity={0}
@@ -253,18 +260,19 @@ function App() {
                   If you want, you can insert message!
                 </p>
               }
+              color="#32C7BB"
             />
           </SectionContainer>
 
           <SectionContainer
-            title={"<SimpleSpinner />"}
+            title={"<RingSpinner />"}
             setShowOverlay={(nextShowStatus: boolean) =>
-              setOverlay({ ...overlay, simpleSpinner: nextShowStatus })
+              setOverlay({ ...overlay, ringSpinner: nextShowStatus })
             }
           >
-            <SimpleSpinner />
-            <SimpleSpinnerOverlay
-              loading={overlay.simpleSpinner}
+            <RingSpinner />
+            <RingSpinnerOverlay
+              loading={overlay.ringSpinner}
               message={
                 <p style={{ marginTop: "12px" }}>
                   If you want, you can insert message!
@@ -278,9 +286,11 @@ function App() {
             setShowOverlay={(nextShowStatus: boolean) =>
               setOverlay({ ...overlay, ferrisWheelSpinner: nextShowStatus })
             }
+            overlayButtonColor="#32C7BB"
           >
-            <FerrisWheelSpinner />
+            <FerrisWheelSpinner color="#32C7BB" />
             <FerrisWheelSpinnerOverlay
+              color="#32C7BB"
               loading={overlay.ferrisWheelSpinner}
               message={
                 <p style={{ marginTop: "12px" }}>
@@ -312,9 +322,11 @@ function App() {
             setShowOverlay={(nextShowStatus: boolean) =>
               setOverlay({ ...overlay, windmillSpinner: nextShowStatus })
             }
+            overlayButtonColor="#32C7BB"
           >
-            <WindmillSpinner />
+            <WindmillSpinner color="#32C7BB" />
             <WindmillSpinnerOverlay
+              color="#32C7BB"
               loading={overlay.windmillSpinner}
               message={
                 <p style={{ marginTop: "12px" }}>
@@ -346,9 +358,11 @@ function App() {
             setShowOverlay={(nextShowStatus: boolean) =>
               setOverlay({ ...overlay, dotLoader: nextShowStatus })
             }
+            overlayButtonColor="#32C7BB"
           >
-            <DotLoader />
+            <DotLoader color="#32C7BB" />
             <DotLoaderOverlay
+              color="#32C7BB"
               loading={overlay.dotLoader}
               message={
                 <p style={{ marginTop: "12px" }}>
@@ -366,6 +380,7 @@ function App() {
           >
             <BounceLetterLoader />
             <BounceLetterLoaderOverlay
+              letters="Please wait"
               loading={overlay.bounceLetterLoader}
               message={
                 <p style={{ marginTop: "12px" }}>

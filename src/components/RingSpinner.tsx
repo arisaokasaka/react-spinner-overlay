@@ -2,16 +2,16 @@ import React from "react";
 import "../animation/rotate-infinite.css";
 import { Overlay, OverlayProps } from "./common/Overlay";
 
-type SimpleSpinnerProps = {
+type RingSpinnerProps = {
   loading?: boolean;
   size?: number;
   color?: string;
   borderWidth?: number;
 };
 
-export const SimpleSpinner: React.FC<SimpleSpinnerProps> = ({
+export const RingSpinner: React.FC<RingSpinnerProps> = ({
   loading = true,
-  size = 60,
+  size = 42,
   color = "#00ced1",
   borderWidth = 2,
 }) => {
@@ -37,31 +37,22 @@ export const SimpleSpinner: React.FC<SimpleSpinnerProps> = ({
   );
 };
 
-export const SimpleSpinnerOverlay: React.FC<SimpleSpinnerProps & OverlayProps> =
-  ({
-    loading = true,
-    size,
-    color,
-    borderWidth,
-    overlayColor,
-    zIndex,
-    message,
-  }) => {
-    return (
-      <>
-        {loading && (
-          <Overlay
-            overlayColor={overlayColor}
-            zIndex={zIndex}
-            message={message}
-          >
-            <SimpleSpinner
-              size={size}
-              color={color}
-              borderWidth={borderWidth}
-            />
-          </Overlay>
-        )}
-      </>
-    );
-  };
+export const RingSpinnerOverlay: React.FC<RingSpinnerProps & OverlayProps> = ({
+  loading = true,
+  size,
+  color,
+  borderWidth,
+  overlayColor,
+  zIndex,
+  message,
+}) => {
+  return (
+    <>
+      {loading && (
+        <Overlay overlayColor={overlayColor} zIndex={zIndex} message={message}>
+          <RingSpinner size={size} color={color} borderWidth={borderWidth} />
+        </Overlay>
+      )}
+    </>
+  );
+};

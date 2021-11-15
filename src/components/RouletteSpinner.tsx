@@ -10,7 +10,7 @@ type RouletteSpinnerProps = {
 
 export const RouletteSpinner: React.FC<RouletteSpinnerProps> = ({
   loading = true,
-  size = 40,
+  size = 32,
   color = "#00ced1",
 }) => {
   const Border: React.FC<{
@@ -35,8 +35,8 @@ export const RouletteSpinner: React.FC<RouletteSpinnerProps> = ({
           style={{
             display: "block",
             backgroundColor: color,
-            width: `20%`,
-            height: `20%`,
+            width: `22%`,
+            height: `22%`,
             borderRadius: "100%",
           }}
         ></span>
