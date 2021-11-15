@@ -10,12 +10,51 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Installation
 
+yarn: 
 ```
 yarn add react-spinner-overlay
 ```
 
-or
-
+npm: 
 ```
 npm install react-spinner-overlay
+```
+
+## Usage
+There are mainly two usages. You have to prepare loading boolean state or boolean variables.
+
+**A. Pass loading(boolean) prop to spinner**
+```
+import { CircleSpinnerOverlay, FerrisWheelSpinner } from 'react-spinner-overlay'
+
+...
+
+  const [loading, setLoading] = useState<boolean>(true)
+
+...
+
+  return (
+    <>
+      <FerrisWheelSpinner loading={loading} />
+      <CircleSpinnerOverlay loading={loading} />
+    </>
+  )
+
+```
+
+**B. Switch components**
+```
+
+import { FerrisWheelSpinner } from 'react-spinner-overlay'
+
+...
+
+  return (
+    <>
+      {loading ?
+        <FerrisWheelSpinner loading={loading} />
+         : <p>loaded!</p>
+       }
+    </>
+  )
 ```
