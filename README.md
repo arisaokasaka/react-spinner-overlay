@@ -1,4 +1,4 @@
-## 🏥　Sorry, maintenancing now. Please wait for some days.　🏥
+## 🏥　Sorry, but currently under maintenance. Please wait a few days.　🏥
 
 # React Spinner Overlay
 
