@@ -1,9 +1,9 @@
 const path = require("path");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 const ForkTsCheckerWebpackPlugin = require("fork-ts-checker-webpack-plugin");
 
 module.exports = {
-  entry: "./src/index.ts",
+  entry: "./examples/src/index.tsx",
   module: {
     rules: [
       {
@@ -14,45 +14,31 @@ module.exports = {
         },
       },
       {
-        test: /\.css$/i,
-        use: [MiniCssExtractPlugin.loader, "css-loader", "postcss-loader"],
-      },
-      {
-        test: /\.(t|j)sx?$/,
-        exclude: /node_modules/,
-        use: {
-          loader: "babel-loader",
-        },
+        test: /\.css$/,
+        use: ["style-loader", "css-loader", "postcss-loader"],
       },
     ],
   },
   output: {
-    filename: "index.js",
-    path: path.resolve(__dirname, "dist"),
-    library: {
-      name: "react-spinner-overlay",
-      type: "umd",
-    },
-    globalObject: "this",
-  },
-  externals: {
-    lodash: {
-      commonjs: "lodash",
-      commonjs2: "lodash",
-      amd: "lodash",
-      root: "_",
-    },
+    path: path.join(__dirname, "examples/dist"),
+    filename: "bundle.js",
   },
   resolve: {
     extensions: ["*", ".js", ".jsx", ".ts", ".tsx"],
   },
   plugins: [
+    new HtmlWebpackPlugin({
+      template: path.join(__dirname, "examples/src/index.html"),
+      filename: "./index.html",
+    }),
     new ForkTsCheckerWebpackPlugin({
       typescript: true,
       eslint: {
         files: "./src/**/*.{ts,tsx}",
       },
     }),
-    new MiniCssExtractPlugin(),
   ],
+  devServer: {
+    port: 3010,
+  },
 };
