@@ -8,14 +8,14 @@ type BounceLetterLoaderProps = {
   width?: number;
   height?: number;
   color?: string;
-  animationDelay?: number;
+  animationDuration?: number;
 };
 
 export const BounceLetterLoader: React.FC<BounceLetterLoaderProps> = ({
   loading = true,
   letters = "Loading...",
   color = "#00ced1",
-  animationDelay,
+  animationDuration,
 }) => {
   const letterList: string[] = letters.split("");
 
@@ -37,7 +37,7 @@ export const BounceLetterLoader: React.FC<BounceLetterLoaderProps> = ({
                 color: color,
                 minWidth: "4px",
                 animationDelay: `${index * 0.1}s`,
-                animationDuration: `${animationDelay}s`,
+                animationDuration: `${animationDuration}s`,
               }}
             >
               {letter}
@@ -55,7 +55,7 @@ export const BounceLetterLoaderOverlay: React.FC<
   loading = true,
   letters,
   color,
-  animationDelay,
+  animationDuration,
   overlayColor,
   zIndex,
   message,
@@ -66,7 +66,7 @@ export const BounceLetterLoaderOverlay: React.FC<
         <Overlay overlayColor={overlayColor} zIndex={zIndex} message={message}>
           <BounceLetterLoader
             letters={letters}
-            animationDelay={animationDelay}
+            animationDuration={animationDuration}
             color={color}
           />
         </Overlay>
