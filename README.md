@@ -36,7 +36,10 @@ import { CircleSpinnerOverlay, FerrisWheelSpinner } from 'react-spinner-overlay'
   return (
     <>
       <FerrisWheelSpinner loading={loading} />
-      <CircleSpinnerOverlay loading={loading} />
+      <CircleSpinnerOverlay
+      　　loading={loading} 
+       overlayColor="rgba(0,153,255,0.2)"
+      />
     </>
   )
 
@@ -52,7 +55,7 @@ import { FerrisWheelSpinner } from 'react-spinner-overlay'
   return (
     <>
       {loading
-        ? <FerrisWheelSpinner loading={loading} />
+        ? <FerrisWheelSpinner loading={loading}　color="#FF7626" />
         : <p>loaded!</p>
       }
     </>
@@ -164,6 +167,6 @@ All overlays (`BounceLetterLoaderOverlay`, `CircleSpinnerOverlay`, `DartsSpinner
 | prop | type | default |
 | --- | --- | --- |
 | `overlayColor` | `string` | `rgb(255 255 255 / 80%)` |
-| `message` | `string` | |
+| `message` | `string or JSX.Element` | |
 | `zIndex` | `number` | `500` |
 
