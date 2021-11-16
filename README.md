@@ -8,7 +8,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 [Demo page](https://arisaokasaka.github.io/react-spinner-overlay/)
 
-------------------------------------
+---
 
 ## 💫 Installation
 
@@ -22,7 +22,7 @@ npm:
 npm install react-spinner-overlay
 ```
 
-------------------------------------
+---
 
 ## 📌 Usage
 There are mainly two usages. You have to prepare loading boolean state or boolean variables.
@@ -66,7 +66,7 @@ import { FerrisWheelSpinner } from 'react-spinner-overlay'
   )
 ```
 
-------------------------------------
+---
 
 ## 🎗 Props of each spinner/overlay
 
