@@ -3,10 +3,8 @@ import "../animation/bounce-vertically-40.css";
 import { Overlay, OverlayProps } from "./common/Overlay";
 
 type BounceLetterLoaderProps = {
-  letters?: string;
   loading?: boolean;
-  width?: number;
-  height?: number;
+  letters?: string;
   color?: string;
   animationDuration?: number;
 };
