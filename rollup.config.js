@@ -37,9 +37,10 @@ if (!watch) {
         exports: "auto",
         globals: {
           react: "React",
+          "react-dom": "ReactDOM",
         },
       },
-      external: ["react"],
+      external: ["react", "react-dom"],
       plugins: [
         resolve({ browser: true }),
         babel({
