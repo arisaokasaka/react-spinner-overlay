@@ -64,14 +64,106 @@ import { FerrisWheelSpinner } from 'react-spinner-overlay'
 
 ### CircleSpinner
 
+| prop | type | default | note |
+| --- | --- | --- | --- |
+| `loading` | `boolean` | `true` | |
+| `size` | `number` | `42` | px |
+| `color` | `string` | `#00ced1` | |
+| `innerBorderWidth` | `number` | `6` | |
+| `outerBorderWidth` | `number` | `1` | |
+| `innerBorderOpacity` | `number` | `1` | |
+| `outerBorderOpacity` | `number` | `1` | |
+
+
+### LineLoader
+
+| prop | type | default | note |
+| --- | --- | --- | --- |
+| `loading` | `boolean` | `true` | |
+| `width` | `number` | `60` | px |
+| `height` | `number` | `4` | px |
+| `color` | `string` | `#00ced1` | |
+| `bgOpacity` | `number` | `0.3` | |
+| `borderRadius` | `number` | `10` | px |
+
+
+### RingSpinner
+
+| prop | type | default | note |
+| --- | --- | --- | --- |
+| `loading` | `boolean` | `true` | |
+| `size` | `number` | `42` | px |
+| `color` | `string` | `#00ced1` |  |
+| `borderWidth` | `number` | `2` | px |
+
+
+### FerrisWheelSpinner
+
+| prop | type | default | note |
+| --- | --- | --- | --- |
+| `loading` | `boolean` | `true` | |
+| `size` | `number` | `32` | px |
+| `color` | `string` | `#00ced1` |  |
+
+
+### WindmillSpinner
+
+| prop | type | default | note |
+| --- | --- | --- | --- |
+| `loading` | `boolean` | `true` | |
+| `size` | `number` | `40` | px |
+| `color` | `string` | `#00ced1` |  |
+| `borderWidth` | `number` | `4` | px |
+| `borderHeight` | `number` | `10` | px |
+| `borderRadius` | `number` | `8` | px |
+
+
+### RouletteSpinner
+
+| prop | type | default | note |
+| --- | --- | --- | --- |
+| `loading` | `boolean` | `true` | |
+| `size` | `number` | `32` | px |
+| `color` | `string` | `#00ced1` |  |
+
+
+### DartsSpinner
+
+| prop | type | default | note |
+| --- | --- | --- | --- |
+| `loading` | `boolean` | `true` | |
+| `size` | `number` | `48` | px |
+| `color` | `string` | `#00ced1` |  |
+
+
+### DotLoader
+
+| prop | type | default | note |
+| --- | --- | --- | --- |
+| `loading` | `boolean` | `true` | |
+| `size` | `number` | `12` | px |
+| `color` | `string` | `#00ced1` |  |
+| `between` | `number` | `3` | px |
+
+
+
+### BounceLetterLoader
+
+| prop | type | default | note |
+| --- | --- | --- | --- |
+| `loading` | `boolean` | `true` | |
+| `letters` | `string` | `Loading...` | |
+| `color` | `string` | `#00ced1` |  |
+| `animationDuration` | `number` | `2` | second |
+
+
+### Overlay
+All overlays (`BounceLetterLoaderOverlay`, `CircleSpinnerOverlay`, `DartsSpinnerOverlay`, `DotLoaderOverlay`, `FerrisWheelSpinnerOverlay`, `LineLoaderOverlay`, `RouletteSpinnerOverlay`, `RingSpinnerOverlay`, `WindmillSpinnerOverlay`) have their own spinner props, plus the following props.
+
+
 | prop | type | default |
 | --- | --- | --- |
-| `loading` | `boolean` | `true` |
-| `size` | `number` | `42` |
-| `color` | `string` | `#00ced1` |
-| `innerBorderWidth` | `number` | `6` |
-| `outerBorderWidth` | `number` | `1` |
-| `innerBorderOpacity` | `number` | `1` |
-| `outerBorderOpacity` | `number` | `1` |
-
+| `overlayColor` | `string` | `rgb(255 255 255 / 80%)` |
+| `message` | `string` | |
+| `zIndex` | `number` | `500` |
 
