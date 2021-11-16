@@ -51,10 +51,27 @@ import { FerrisWheelSpinner } from 'react-spinner-overlay'
 
   return (
     <>
-      {loading ?
-        <FerrisWheelSpinner loading={loading} />
-         : <p>loaded!</p>
-       }
+      {loading
+        ? <FerrisWheelSpinner loading={loading} />
+        : <p>loaded!</p>
+      }
     </>
   )
 ```
+
+
+## Props of each spinner/overlay
+
+### CircleSpinner
+
+| prop | type | default |
+| --- | --- | --- |
+| `loading` | `boolean` | `true` |
+| `size` | `number` | `42` |
+| `color` | `string` | `#00ced1` |
+| `innerBorderWidth` | `number` | `6` |
+| `outerBorderWidth` | `number` | `1` |
+| `innerBorderOpacity` | `number` | `1` |
+| `outerBorderOpacity` | `number` | `1` |
+
+
