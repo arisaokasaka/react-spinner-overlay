@@ -4,11 +4,13 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Demo
+## 🚀 Demo
 
 [Demo page](https://arisaokasaka.github.io/react-spinner-overlay/)
 
-## Installation
+------------------------------------
+
+## 💫 Installation
 
 yarn: 
 ```
@@ -20,7 +22,9 @@ npm:
 npm install react-spinner-overlay
 ```
 
-## Usage
+------------------------------------
+
+## 📌 Usage
 There are mainly two usages. You have to prepare loading boolean state or boolean variables.
 
 **A. Pass loading(boolean) prop to spinner**
@@ -35,7 +39,7 @@ import { CircleSpinnerOverlay, FerrisWheelSpinner } from 'react-spinner-overlay'
 
   return (
     <>
-      <FerrisWheelSpinner loading={loading} />
+      <FerrisWheelSpinner loading={loading}　size={28} />
       <CircleSpinnerOverlay
       　　loading={loading} 
        overlayColor="rgba(0,153,255,0.2)"
@@ -62,8 +66,9 @@ import { FerrisWheelSpinner } from 'react-spinner-overlay'
   )
 ```
 
+------------------------------------
 
-## Props of each spinner/overlay
+## 🎗 Props of each spinner/overlay
 
 ### CircleSpinner
 
@@ -161,7 +166,7 @@ import { FerrisWheelSpinner } from 'react-spinner-overlay'
 
 
 ### Overlay
-All overlays (`BounceLetterLoaderOverlay`, `CircleSpinnerOverlay`, `DartsSpinnerOverlay`, `DotLoaderOverlay`, `FerrisWheelSpinnerOverlay`, `LineLoaderOverlay`, `RouletteSpinnerOverlay`, `RingSpinnerOverlay`, `WindmillSpinnerOverlay`) have their own spinner props, plus the following props.
+All overlays (`BounceLetterLoaderOverlay`, `CircleSpinnerOverlay`, `DartsSpinnerOverlay`, `DotLoaderOverlay`, `FerrisWheelSpinnerOverlay`, `LineLoaderOverlay`, `RouletteSpinnerOverlay`, `RingSpinnerOverlay`, `WindmillSpinnerOverlay`) **have their own spinner props**, plus the following props.
 
 
 | prop | type | default |
