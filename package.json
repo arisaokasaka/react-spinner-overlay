@@ -1,6 +1,6 @@
 {
   "name": "react-spinner-overlay",
-  "version": "0.1.27",
+  "version": "0.1.28",
   "description": "A collection of react loading spinners and loading spinners' overlays",
   "repository": {
     "type": "git",
@@ -35,7 +35,7 @@
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
   "files": [
-    "/dist"
+    "dist"
   ],
   "types": "dist/index.d.ts",
   "dependencies": {
@@ -50,8 +50,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "dev:demo": "webpack-dev-server --config webpack.config.js --mode development",
-    "build:demo": "rm -rf examples/dist && webpack --config webpack.config.js --mode production",
-    "publish:demo": "yarn build:demo && gh-pages -d examples/dist",
+    "build:demo": "rm -rf examples/bundle && webpack --config webpack.config.js --mode production",
+    "publish:demo": "yarn build:demo && gh-pages -d examples/bundle",
     "prepublishOnly": "yarn build",
     "type": "tsc --project . --outDir ./dist --declaration --emitDeclarationOnly",
     "rollup": "rm -rf dist && rollup --config"
