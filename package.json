@@ -34,6 +34,7 @@
   ],
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
+  "unpkg": "dist/index.umd.js",
   "files": [
     "dist"
   ],
@@ -45,15 +46,15 @@
     "typescript": "^4.1.2"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "rm -rf dist && yarn bundle && yarn type",
+    "build": "rm -rf dist && rollup --config scripts/rollup/rollup.config.js && yarn type-create",
+    "type-create": "tsc --project . --outDir ./dist --declaration --emitDeclarationOnly",
+    "prepublishOnly": "yarn build",
+    "watch": "rollup --config scripts/rollup/rollup.demo.config.js --watch",
+    "type-check:demo": "tsc --project tsconfig.demo.json",
+    "build:demo": "rollup --config scripts/rollup/rollup.demo.config.js",
+    "publish:demo": "yarn build:demo && gh-pages -d examples/public",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "watch": "rollup --config --watch",
-    "type": "tsc --project . --outDir ./dist --declaration --emitDeclarationOnly",
-    "bundle": "rm -rf dist && rm -rf examples/public/bundle.js && rollup --config",
-    "publish:demo": "yarn bundle && gh-pages -d examples/public",
-    "prepublishOnly": "yarn build"
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [
