@@ -51,9 +51,8 @@
     "eject": "react-scripts eject",
     "watch": "rollup --config --watch",
     "type": "tsc --project . --outDir ./dist --declaration --emitDeclarationOnly",
-    "bundle": "rm -rf dist && rollup --config",
-    "bundle:demo": "rm -rf examples/public/bundle.js && rollup",
-    "publish:demo": "yarn build:demo && gh-pages -d examples/bundle",
+    "bundle": "rm -rf dist && rm -rf examples/public/bundle.js && rollup --config",
+    "publish:demo": "yarn bundle && gh-pages -d examples/public",
     "prepublishOnly": "yarn build"
   },
   "eslintConfig": {
