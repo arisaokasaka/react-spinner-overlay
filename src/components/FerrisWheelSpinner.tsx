@@ -18,6 +18,7 @@ export const FerrisWheelSpinner: React.FC<FerrisWheelSpinnerProps> = ({
   }> = ({ rotate }) => {
     return (
       <div
+        data-testid="ferris-wheel-border"
         style={{
           position: "absolute",
           top: 0,
@@ -28,6 +29,7 @@ export const FerrisWheelSpinner: React.FC<FerrisWheelSpinnerProps> = ({
         }}
       >
         <span
+          data-testid="ferris-wheel-border-inner"
           style={{
             display: "block",
             backgroundColor: color,
@@ -44,6 +46,7 @@ export const FerrisWheelSpinner: React.FC<FerrisWheelSpinnerProps> = ({
     <>
       {loading && (
         <div
+          data-testid="ferris-wheel-spinner"
           className="rotate-infinite-slow"
           style={{
             display: "block",
