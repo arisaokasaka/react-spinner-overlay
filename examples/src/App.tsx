@@ -10,7 +10,7 @@ import { BounceLetterLoader, BounceLetterLoaderOverlay } from "../../src/index";
 import { DotLoader, DotLoaderOverlay } from "../../src/index";
 import { RouletteSpinner, RouletteSpinnerOverlay } from "../../src/index";
 
-function App() {
+function App(): JSX.Element {
   const [overlay, setOverlay] = useState({
     circleSpinner: false,
     lineLoader: false,
@@ -114,7 +114,7 @@ function App() {
           flexDirection: "column",
           marginBottom: "24px",
           padding: "16px",
-          zIndex: -100,
+          paddingTop: "52px",
         }}
       >
         <p style={{ marginTop: "48px", fontSize: "20px", textAlign: "center" }}>
