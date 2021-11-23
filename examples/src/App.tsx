@@ -1,14 +1,25 @@
 import "./index.css";
 import React, { useState } from "react";
-import { CircleSpinner, CircleSpinnerOverlay } from "../../src/index";
-import { DartsSpinner, DartsSpinnerOverlay } from "../../src/index";
-import { LineLoader, LineLoaderOverlay } from "../../src/index";
-import { RingSpinner, RingSpinnerOverlay } from "../../src/index";
-import { FerrisWheelSpinner, FerrisWheelSpinnerOverlay } from "../../src/index";
-import { WindmillSpinner, WindmillSpinnerOverlay } from "../../src/index";
-import { BounceLetterLoader, BounceLetterLoaderOverlay } from "../../src/index";
-import { DotLoader, DotLoaderOverlay } from "../../src/index";
-import { RouletteSpinner, RouletteSpinnerOverlay } from "../../src/index";
+import {
+  CircleSpinner,
+  CircleSpinnerOverlay,
+  DartsSpinner,
+  DartsSpinnerOverlay,
+  LineLoader,
+  LineLoaderOverlay,
+  RingSpinner,
+  RingSpinnerOverlay,
+  FerrisWheelSpinner,
+  FerrisWheelSpinnerOverlay,
+  WindmillSpinner,
+  WindmillSpinnerOverlay,
+  BounceLetterLoader,
+  BounceLetterLoaderOverlay,
+  DotLoader,
+  DotLoaderOverlay,
+  RouletteSpinner,
+  RouletteSpinnerOverlay,
+} from "../../src/index";
 
 function App(): JSX.Element {
   const [overlay, setOverlay] = useState({
