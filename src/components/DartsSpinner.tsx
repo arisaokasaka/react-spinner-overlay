@@ -17,6 +17,7 @@ export const DartsSpinner: React.FC<DartsSpinnerProps> = ({
     <>
       {loading && (
         <div
+          data-testid="darts-spinner"
           style={{
             display: "grid",
             gridTemplateColumns: "50% 50%",
@@ -30,6 +31,7 @@ export const DartsSpinner: React.FC<DartsSpinnerProps> = ({
           }}
         >
           <span
+            data-testid="darts-spinner-el-1"
             className="fading-four-count-1"
             style={{
               display: "block",
@@ -39,6 +41,7 @@ export const DartsSpinner: React.FC<DartsSpinnerProps> = ({
             }}
           ></span>
           <span
+            data-testid="darts-spinner-el-2"
             className="fading-four-count-2"
             style={{
               display: "block",
@@ -48,6 +51,7 @@ export const DartsSpinner: React.FC<DartsSpinnerProps> = ({
             }}
           ></span>
           <span
+            data-testid="darts-spinner-el-3"
             className="fading-four-count-4"
             style={{
               display: "block",
@@ -57,6 +61,7 @@ export const DartsSpinner: React.FC<DartsSpinnerProps> = ({
             }}
           ></span>
           <span
+            data-testid="darts-spinner-el-4"
             className="fading-four-count-3"
             style={{
               display: "block",

@@ -19,15 +19,14 @@ export const RingSpinner: React.FC<RingSpinnerProps> = ({
     <>
       {loading && (
         <div
+          data-testid="ring-spinner"
           className="rotate-infinite"
           style={{
             display: "block",
             height: `${size}px`,
             width: `${size}px`,
-            color: `${color}`,
             borderRadius: "50%",
             border: `${borderWidth}px solid ${color}`,
-            borderColor: `${color}`,
             borderTopColor: "transparent",
             boxSizing: "border-box",
           }}

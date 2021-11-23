@@ -26,6 +26,7 @@ export const CircleSpinner: React.FC<CircleSpinnerProps> = ({
       {loading && (
         <div
           className="rotate-infinite"
+          data-testid="circle-spinner"
           style={{
             display: "block",
             position: "relative",
@@ -35,12 +36,12 @@ export const CircleSpinner: React.FC<CircleSpinnerProps> = ({
           }}
         >
           <div
+            data-testid="circle-spinner-inner"
             style={{
               display: "block",
               position: "relative",
               height: `${size}px`,
               width: `${size}px`,
-              color: `${color}`,
               borderRadius: "50%",
               border: `${innerBorderWidth}px solid ${color}`,
               borderColor: "transparent",
@@ -50,6 +51,7 @@ export const CircleSpinner: React.FC<CircleSpinnerProps> = ({
             }}
           ></div>
           <div
+            data-testid="circle-spinner-outer"
             style={{
               position: "absolute",
               top: 0,

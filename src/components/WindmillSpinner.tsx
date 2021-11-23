@@ -24,6 +24,7 @@ export const WindmillSpinner: React.FC<WindmillSpinnerProps> = ({
   }> = ({ rotate }) => {
     return (
       <div
+        data-testid="windmill-border"
         style={{
           position: "absolute",
           top: 0,
@@ -36,6 +37,7 @@ export const WindmillSpinner: React.FC<WindmillSpinnerProps> = ({
         }}
       >
         <span
+          data-testid="windmill-border-inner"
           style={{
             display: "block",
             backgroundColor: color,
@@ -53,6 +55,7 @@ export const WindmillSpinner: React.FC<WindmillSpinnerProps> = ({
       {loading && (
         <div
           className="rotate-infinite-slow"
+          data-testid="windmill-spinner"
           style={{
             display: "block",
             position: "relative",

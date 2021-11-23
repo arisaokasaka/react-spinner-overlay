@@ -18,33 +18,39 @@ export const DotLoader: React.FC<DotLoaderProps> = ({
   return (
     <>
       {loading && (
-        <div style={{ display: "flex", columnGap: between }}>
+        <div
+          data-testid="dot-loader"
+          style={{ display: "flex", columnGap: `${between}px` }}
+        >
           <div
             className="bounce-vertically-90"
+            data-testid="dot-loader1"
             style={{
-              width: size,
-              height: size,
-              borderRadius: size,
+              width: `${size}px`,
+              height: `${size}px`,
+              borderRadius: `${size}px`,
               backgroundColor: color,
               animationDelay: "0.1s",
             }}
           ></div>
           <div
             className="bounce-vertically-90"
+            data-testid="dot-loader2"
             style={{
-              width: size,
-              height: size,
-              borderRadius: size,
+              width: `${size}px`,
+              height: `${size}px`,
+              borderRadius: `${size}px`,
               backgroundColor: color,
               animationDelay: "0.2s",
             }}
           ></div>
           <div
             className="bounce-vertically-90"
+            data-testid="dot-loader3"
             style={{
-              width: size,
-              height: size,
-              borderRadius: size,
+              width: `${size}px`,
+              height: `${size}px`,
+              borderRadius: `${size}px`,
               backgroundColor: color,
               animationDelay: "0.3s",
             }}

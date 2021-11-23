@@ -17,6 +17,7 @@ export const Overlay: React.FC<OverlayProps> = ({
     if (typeof document !== undefined) {
       return ReactDOM.createPortal(
         <div
+          data-testid="overlay"
           style={{
             position: "fixed",
             top: "0",
@@ -40,6 +41,7 @@ export const Overlay: React.FC<OverlayProps> = ({
 
     return (
       <div
+        data-testid="overlay"
         style={{
           position: "fixed",
           top: "0",

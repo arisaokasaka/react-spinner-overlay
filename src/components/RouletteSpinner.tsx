@@ -19,6 +19,7 @@ export const RouletteSpinner: React.FC<RouletteSpinnerProps> = ({
   }> = ({ rotate, index }) => {
     return (
       <div
+        data-testid="roulette-element"
         className="roulette"
         style={{
           position: "absolute",
@@ -32,6 +33,7 @@ export const RouletteSpinner: React.FC<RouletteSpinnerProps> = ({
         }}
       >
         <span
+          data-testid="roulette-element-inner"
           style={{
             display: "block",
             backgroundColor: color,
@@ -48,6 +50,7 @@ export const RouletteSpinner: React.FC<RouletteSpinnerProps> = ({
     <>
       {loading && (
         <div
+          data-testid="roulette-spinner"
           style={{
             display: "block",
             position: "relative",

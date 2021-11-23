@@ -23,6 +23,7 @@ export const LineLoader: React.FC<LineLoaderProps> = ({
     <>
       {loading && (
         <div
+          data-testid="line-loader"
           style={{
             position: "relative",
             display: "block",
@@ -34,6 +35,7 @@ export const LineLoader: React.FC<LineLoaderProps> = ({
           }}
         >
           <div
+            data-testid="line-loader-back"
             style={{
               position: "absolute",
               top: "0",
@@ -46,6 +48,7 @@ export const LineLoader: React.FC<LineLoaderProps> = ({
             }}
           ></div>
           <div
+            data-testid="line-loader-front"
             className="swing-horizontally"
             style={{
               position: "absolute",
