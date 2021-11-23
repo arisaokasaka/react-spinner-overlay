@@ -1,6 +1,7 @@
 import type { Config } from "@jest/types";
 
 const config: Config.InitialOptions = {
+  testEnvironment: "jsdom",
   clearMocks: true,
   verbose: true,
   collectCoverage: true,

@@ -42,7 +42,6 @@
   "dependencies": {
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "react-scripts": "4.0.3",
     "typescript": "^4.1.2"
   },
   "scripts": {
@@ -53,14 +52,7 @@
     "type-check:demo": "tsc --project tsconfig.demo.json",
     "build:demo": "rollup --config scripts/rollup/rollup.demo.config.js",
     "publish:demo": "yarn build:demo && gh-pages -d examples/public",
-    "test": "jest",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+    "test": "jest"
   },
   "devDependencies": {
     "@babel/cli": "^7.15.7",
@@ -81,8 +73,16 @@
     "@types/node": "^16.11.7",
     "@types/react": "^17.0.34",
     "@types/react-dom": "^17.0.11",
+    "@typescript-eslint/eslint-plugin": "^4.5.0",
+    "@typescript-eslint/parser": "^4.5.0",
+    "eslint": "^7.11.0",
+    "eslint-plugin-jest": "^24.1.0",
+    "eslint-plugin-react": "^7.21.5",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "eslint-plugin-testing-library": "^3.9.2",
     "gh-pages": "^3.2.3",
     "identity-obj-proxy": "^3.0.0",
+    "jest": "26.6.0",
     "postcss": "^8.3.8",
     "rollup": "^2.60.0",
     "rollup-plugin-postcss": "^4.0.1",
